@@ -35,7 +35,7 @@ class HomeContainers extends Component {
               <div class="servicebox text-center">
                 <div class="service-icon">
                   <div class="dm-icon-effect-1" data-effect="slide-left">
-                    <a href="#" class="">
+                    <a href="/" class="">
                       {" "}
                       <i class="active dm-icon fa fa-bars fa-3x"></i>{" "}
                     </a>
@@ -57,7 +57,7 @@ class HomeContainers extends Component {
               <div class="servicebox text-center">
                 <div class="service-icon">
                   <div class="dm-icon-effect-1" data-effect="slide-bottom">
-                    <a href="#" class="">
+                    <a href="/" class="">
                       {" "}
                       <i class="active dm-icon fa fa-laptop fa-3x"></i>{" "}
                     </a>
@@ -79,7 +79,7 @@ class HomeContainers extends Component {
               <div class="servicebox text-center">
                 <div class="service-icon">
                   <div class="dm-icon-effect-1" data-effect="slide-right">
-                    <a href="#" class="">
+                    <a href="/" class="">
                       {" "}
                       <i class="active dm-icon fa fa-book fa-3x"></i>{" "}
                     </a>
@@ -207,96 +207,6 @@ class HomeContainers extends Component {
             </div>
           </div>
         </section>
-
-        {/* <section class="section4">
-          <div class="container">
-            <div class="col-lg-6 col-md-6 col-sm-12 columns">
-              <div class="widget" data-effect="slide-left">
-                <img src={require("../img/slider_02.png")} alt="" />
-              </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 columns">
-              <div class="widget clearfix">
-                <div class="services_lists">
-                  <div class="services_lists_boxes clearfix">
-                    <div class="col-lg-3 col-md-3 col-sm-12">
-                      <div
-                        class="services_lists_boxes_icon"
-                        data-effect="slide-bottom"
-                      >
-                        <a href="#" class="">
-                          {" "}
-                          <i class="active dm-icon-medium fa fa-key fa-2x"></i>{" "}
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                      <div class="servicetitle">
-                        <h4>Create an Account</h4>
-                        <hr />
-                      </div>
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry"s standard dummy text ever since..
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="services_lists_boxes clearfix">
-                    <div class="col-lg-3 col-md-3 col-sm-12">
-                      <div
-                        class="services_lists_boxes_icon"
-                        data-effect="slide-bottom"
-                      >
-                        <a href="#" class="">
-                          {" "}
-                          <i class="active dm-icon-medium fa fa-download fa-2x"></i>{" "}
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                      <div class="servicetitle">
-                        <h4>Upload Your Works</h4>
-                        <hr />
-                      </div>
-                      <p>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry"s standard..
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="services_lists_boxes clearfix">
-                    <div class="col-lg-3 col-md-3 col-sm-12">
-                      <div
-                        class="services_lists_boxes_icon_none"
-                        data-effect="slide-bottom"
-                      >
-                        <a href="#" class="">
-                          {" "}
-                          <i class="active dm-icon-medium fa fa-dollar fa-2x"></i>{" "}
-                        </a>
-                      </div>
-                    </div>
-                    <div class="col-lg-9 col-md-9 col-sm-9">
-                      <div class="servicetitle">
-                        <h4>Earn Money</h4>
-                        <hr />
-                      </div>
-                      <p>
-                        Lorem Ipsum is simply dummy text of the industry. Lorem
-                        Ipsum has been the industry"s standard dummy text ever
-                        since..
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
       </div>
     );
   }

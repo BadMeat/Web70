@@ -37,17 +37,17 @@ class ProfileContainers extends Component {
                     <div class="bg a0" data-animate="fadeIn">
                       <div class="center-bar">
                         <a
-                          href="#"
+                          href="/"
                           class="twitter a0"
                           data-animate="elasticInDown"
                         ></a>
                         <a
-                          href="#"
+                          href="/"
                           class="facebook a1"
                           data-animate="elasticInDown"
                         ></a>
                         <a
-                          href="#"
+                          href="/"
                           class="in a2"
                           data-animate="elasticInDown"
                         ></a>

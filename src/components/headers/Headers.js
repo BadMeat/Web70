@@ -8,7 +8,7 @@ const headers = (props) => {
             <div class="col-lg-12 text-right">
               <div class="social_buttons">
                 <a
-                  href="#"
+                  href="/"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Facebook"
@@ -16,7 +16,7 @@ const headers = (props) => {
                   <i class="fa fa-facebook"></i>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Instagram"
@@ -24,7 +24,7 @@ const headers = (props) => {
                   <i class="fa fa-instagram"></i>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Twitter"
@@ -32,7 +32,7 @@ const headers = (props) => {
                   <i class="fa fa-twitter"></i>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Youtube"
@@ -40,7 +40,7 @@ const headers = (props) => {
                   <i class="fa fa-youtube"></i>
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="LinkedIn"
@@ -49,7 +49,7 @@ const headers = (props) => {
                 </a>
                 |
                 <a
-                  href="#"
+                  href="/"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Notifikasi"
@@ -92,25 +92,25 @@ const headers = (props) => {
                       </a>
                     </li>
                     <li>
-                      <a href="#">Layanan</a>
+                      <a href="/">Layanan</a>
                       <ul className="dropdown">
                         <li>
-                          <a href="#">Layanan Sirkulasi</a>
+                          <a href="/">Layanan Sirkulasi</a>
                         </li>
                         <li>
-                          <a href="#">Layanan Referensi</a>
+                          <a href="/">Layanan Referensi</a>
                         </li>
                         <li>
-                          <a href="#">Layanan Bimbingan</a>
+                          <a href="/">Layanan Bimbingan</a>
                         </li>
                         <li>
-                          <a href="#">Layanan Keanggotaan</a>
+                          <a href="/">Layanan Keanggotaan</a>
                         </li>
                         <li>
-                          <a href="#">Layanan Peminjaman Buku</a>
+                          <a href="/">Layanan Peminjaman Buku</a>
                         </li>
                         <li>
-                          <a href="#">Layanan Kerjasama</a>
+                          <a href="/">Layanan Kerjasama</a>
                         </li>
                       </ul>
                     </li>
@@ -121,52 +121,52 @@ const headers = (props) => {
                           <a href="profil.html">Visi Misi</a>
                         </li>
                         <li>
-                          <a href="#">Tujuan</a>
+                          <a href="/">Tujuan</a>
                         </li>
                         <li>
-                          <a href="#">Struktur Organisasi Perpustakaan</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li>
-                      <a href="#">O P A C</a>
-                      <ul class="dropdown">
-                        <li>
-                          <a href="#">Visitor Counter</a>
-                        </li>
-                        <li>
-                          <a href="#">Sistem Perpustakaan</a>
-                        </li>
-                        <li>
-                          <a href="#">e-DTS</a>
-                        </li>
-                        <li>
-                          <a href="#">e-DDC</a>
+                          <a href="/">Struktur Organisasi Perpustakaan</a>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="#">Laporan</a>
+                      <a href="/">O P A C</a>
                       <ul class="dropdown">
                         <li>
-                          <a href="#">Bulanan</a>
+                          <a href="/">Visitor Counter</a>
                         </li>
                         <li>
-                          <a href="#">Triwulan</a>
+                          <a href="/">Sistem Perpustakaan</a>
                         </li>
                         <li>
-                          <a href="#">Tahunan</a>
+                          <a href="/">e-DTS</a>
+                        </li>
+                        <li>
+                          <a href="/">e-DDC</a>
                         </li>
                       </ul>
                     </li>
                     <li>
-                      <a href="#">Aktivitas</a>
+                      <a href="/">Laporan</a>
                       <ul class="dropdown">
                         <li>
-                          <a href="#">Program Unggulan</a>
+                          <a href="/">Bulanan</a>
                         </li>
                         <li>
-                          <a href="#">Prestasi</a>
+                          <a href="/">Triwulan</a>
+                        </li>
+                        <li>
+                          <a href="/">Tahunan</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="/">Aktivitas</a>
+                      <ul class="dropdown">
+                        <li>
+                          <a href="/">Program Unggulan</a>
+                        </li>
+                        <li>
+                          <a href="/">Prestasi</a>
                         </li>
                       </ul>
                     </li>

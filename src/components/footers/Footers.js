@@ -10,7 +10,7 @@ const footers = (props) => {
             industry. Lorem Ipsum has been the industry"s standard dummy text
             ever since the 1500s..
           </p>
-          <a class="button small" href="#">
+          <a class="button small" href="/">
             read more
           </a>
         </div>
@@ -22,7 +22,7 @@ const footers = (props) => {
                 <img src={require("../../img/portfolio_10.jpg")} alt="" />
                 Our New Dashboard Is Here
               </a>
-              <a class="readmore" href="#">
+              <a class="readmore" href="/">
                 read more
               </a>
             </li>
@@ -31,7 +31,7 @@ const footers = (props) => {
                 <img src={require("../../img/portfolio_05.jpg")} alt="" />
                 Design Is In The Air
               </a>
-              <a class="readmore" href="#">
+              <a class="readmore" href="/">
                 read more
               </a>
             </li>
@@ -45,7 +45,7 @@ const footers = (props) => {
                 <img src={require("../../img/portfolio_08.jpg")} alt="" />
                 Our New Dashboard Is Here
               </a>
-              <a class="readmore" href="#">
+              <a class="readmore" href="/">
                 read more
               </a>
             </li>
@@ -54,7 +54,7 @@ const footers = (props) => {
                 <img src={require("../../img/portfolio_09.jpg")} alt="" />
                 Design Is In The Air
               </a>
-              <a class="readmore" href="#">
+              <a class="readmore" href="/">
                 read more
               </a>
             </li>
@@ -75,7 +75,7 @@ const footers = (props) => {
               Ibukota Jakarta 12130
             </li>
             <li>
-              <a href="#">
+              <a href="/">
                 <i class="fa fa-map-marker"></i> View large map
               </a>
             </li>
