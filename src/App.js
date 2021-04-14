@@ -14,7 +14,6 @@ import "./css/colors/blue.css";
 import HomeContainers from "./containers/HomeContainers";
 import Layout from "./components/layout/Layout";
 import ProfileContainers from "./containers/ProfileContainers";
-import { Helmet } from "react-helmet";
 import LayananContainers from "./containers/LayananContainers";
 import LaporanBulananContainers from "./containers/LaporanBulananContainers";
 // import 'jquery'
