@@ -11,6 +11,8 @@
  *
  * Date: 2016-05-20T17:17Z
  */
+/* global jQuery, padding */
+/* eslint no-undef: "off"*/
 
 (function( global, factory ) {
 
