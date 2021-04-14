@@ -36,21 +36,17 @@ class ProfileContainers extends Component {
                   <div class="he-view">
                     <div class="bg a0" data-animate="fadeIn">
                       <div class="center-bar">
-                        <a
-                          href="/"
-                          class="twitter a0"
-                          data-animate="elasticInDown"
-                        ></a>
+                        <a href="/" class="twitter a0" data-animate="elasticInDown"> </a>
                         <a
                           href="/"
                           class="facebook a1"
                           data-animate="elasticInDown"
-                        ></a>
+                        > </a>
                         <a
                           href="/"
                           class="in a2"
                           data-animate="elasticInDown"
-                        ></a>
+                        > </a>
                       </div>
                     </div>
                   </div>
