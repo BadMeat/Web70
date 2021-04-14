@@ -92,7 +92,7 @@ const headers = (props) => {
                       </a>
                     </li>
                     <li>
-                      <a href="/">Layanan</a>
+                      <a href="/layanan">Layanan</a>
                       <ul className="dropdown">
                         <li>
                           <a href="/">Layanan Sirkulasi</a>
@@ -146,7 +146,7 @@ const headers = (props) => {
                       </ul>
                     </li>
                     <li>
-                      <a href="/">Laporan</a>
+                      <a href="/laporanBulanan">Laporan</a>
                       <ul class="dropdown">
                         <li>
                           <a href="/">Bulanan</a>

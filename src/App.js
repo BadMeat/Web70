@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import "./lib/bootstrap/css/bootstrap.min.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+// import "./lib/bootstrap/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./lib/font-awesome/css/font-awesome.min.css";
 import "./lib/prettyphoto/css/prettyphoto.css";
 import "./lib/hover/hoverex-all.css";
@@ -15,6 +15,8 @@ import HomeContainers from "./containers/HomeContainers";
 import Layout from "./components/layout/Layout";
 import ProfileContainers from "./containers/ProfileContainers";
 import { Helmet } from "react-helmet";
+import LayananContainers from "./containers/LayananContainers";
+import LaporanBulananContainers from "./containers/LaporanBulananContainers";
 // import 'jquery'
 // import "./lib/jquery/jquery.min"
 // import "./lib/bootstrap/js/bootstrap.min.js"
@@ -37,61 +39,12 @@ class App extends Component {
           <BrowserRouter>
             <Switch>
               <Route path="/" exact component={HomeContainers} />
-              <Route path="/profile" exact component={ProfileContainers} />
+              <Route path="/profile" component={ProfileContainers} />
+              <Route path="/layanan" component={LayananContainers} />
+              <Route path="/laporanBulanan" component={LaporanBulananContainers} />
             </Switch>
           </BrowserRouter>
         </Layout>
-        <Helmet>
-          <script
-            src="./lib/jquery/jquery.min.js"
-            type="text/javascript"
-          ></script>
-          <script
-            src="./lib/bootstrap/js/bootstrap.min.js"
-            type="text/javascript"
-          ></script>
-          <script
-            src="./lib/php-mail-form/validate.js"
-            type="text/javascript"
-          ></script>
-          <script
-            src="./lib/prettyphoto/js/prettyphoto.js"
-            type="text/javascript"
-          ></script>
-          <script
-            src="./lib/isotope/isotope.min.js"
-            type="text/javascript"
-          ></script>
-          <script src="./lib/hover/hoverdir.js" type="text/javascript"></script>
-          <script
-            src="./lib/hover/hoverex.min.js"
-            type="text/javascript"
-          ></script>
-          <script
-            src="./lib/unveil-effects/unveil-effects.js"
-            type="text/javascript"
-          ></script>
-          <script
-            src="./lib/owl-carousel/owl-carousel.js"
-            type="text/javascript"
-          ></script>
-          <script
-            src="./lib/jetmenu/jetmenu.js"
-            type="text/javascript"
-          ></script>
-          <script
-            src="./lib/animate-enhanced/animate-enhanced.min.js"
-            type="text/javascript"
-          ></script>
-          <script
-            src="./lib/jigowatt/jigowatt.js"
-            type="text/javascript"
-          ></script>
-          <script
-            src="./lib/easypiechart/easypiechart.min.js"
-            type="text/javascript"
-          ></script>
-        </Helmet>
       </div>
     );
   }
