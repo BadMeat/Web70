@@ -1,15 +1,43 @@
 import React, { Component } from "react";
 
+import { isMobile } from "react-device-detect";
+
 class ProfileContainers extends Component {
+  constructor(props) {
+    super(props);
+    this.messagesEnd = React.createRef();
+  }
+
+  scrollToBottom = () => {
+    const { index, selected } = this.props;
+    if (index === selected) {
+      setTimeout(() => {
+        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+  };
+
+  componentDidMount() {
+    if (isMobile) {
+      this.scrollToBottom();
+    }
+  }
+
+  componentDidUpdate() {
+    if (isMobile) {
+      this.scrollToBottom();
+    }
+  }
+
   render() {
     return (
       <div>
-        <section class="post-wrapper-top">
-          <div class="container">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <ul class="breadcrumb">
+        <section className="post-wrapper-top">
+          <div className="container">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <ul className="breadcrumb">
                 <li>
-                  <a href="index.html">Home</a>
+                  <a href="home.html">Home</a>
                 </li>
                 <li>Profil</li>
               </ul>
@@ -17,83 +45,124 @@ class ProfileContainers extends Component {
             </div>
           </div>
         </section>
-
-        <section class="section1">
-          <div class="container clearfix">
-            <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
-              <div class="general-title text-center">
+        <div id="visimisi"></div>
+        <section className="section1">
+          <div className="container clearfix">
+            <div className="col-lg-12 col-md-12 col-sm-12 clearfix">
+              <div
+                className="general-title text-center"
+                ref={(el) => {
+                  this.messagesEnd = el;
+                }}
+              >
                 <h3>VISI MISI</h3>
                 <hr />
               </div>
-              <div class="divider"></div>
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="he-wrap tpl2">
+              <div className="divider"></div>
+              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div className="he-wrap tpl2">
                   <img
                     src={require("../img/intro-bg2.jpg")}
                     alt=""
-                    class="img-responsive"
+                    className="img-responsive"
                   />
-                  <div class="he-view">
-                    <div class="bg a0" data-animate="fadeIn">
-                      <div class="center-bar">
-                        <a href="/" class="twitter a0" data-animate="elasticInDown"> </a>
+                  <div className="he-view">
+                    <div className="bg a0" data-animate="fadeIn">
+                      <div className="center-bar">
                         <a
                           href="/"
-                          class="facebook a1"
+                          className="twitter a0"
                           data-animate="elasticInDown"
-                        > </a>
+                        >
+                          {" "}
+                        </a>
                         <a
                           href="/"
-                          class="in a2"
+                          className="facebook a1"
                           data-animate="elasticInDown"
-                        > </a>
+                        >
+                          {" "}
+                        </a>
+                        <a
+                          href="/"
+                          className="in a2"
+                          data-animate="elasticInDown"
+                        >
+                          {" "}
+                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
-
-                <p>
-                  It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged.
-                </p>
-
-                <p>
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including
-                  versions of Lorem Ipsum.
-                </p>
-
-                <p>
-                  Contrary to popular belief, Lorem Ipsum is not simply random
-                  text. It has roots in a piece of classical Latin literature
-                  from 45 BC, making it over 2000 years old.
-                </p>
+              <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div className="visimisi">
+                  <div className="testimonial-meta">
+                    <h4>VISI</h4>
+                  </div>
+                  <p>
+                    “Terwujudnya perpustakaan yang representatif sebagai
+                    penyedia informasi ilmu pengetahuan, teknologi, seni dan
+                    agama.”
+                  </p>
+                </div>
+                <div className="visimisi">
+                  <div className="testimonial-meta">
+                    <h4>MISI</h4>
+                  </div>
+                  <p>
+                    <span
+                      style={{ backgroundColor: "#3498db", color: "white" }}
+                    >
+                      {" "}
+                      &nbsp; <span className="fa fa-chevron-right"></span>{" "}
+                      Memberikan layanan yang ramah, tegas, tertib dan tangkas{" "}
+                    </span>{" "}
+                    <br />{" "}
+                    <span
+                      style={{ backgroundColor: "#EC407A", color: "white" }}
+                    >
+                      {" "}
+                      &nbsp; <span className="fa fa-chevron-right"></span>
+                      Penerapan teknologi informasi yang pada intinya bertumpu
+                      pada konsep otomatisasi{" "}
+                    </span>{" "}
+                    &nbsp;{" "}
+                    <span
+                      style={{ backgroundColor: "#F1C40F", color: "white" }}
+                    >
+                      {" "}
+                      &nbsp; <span className="fa fa-chevron-right"></span>{" "}
+                      Meningkatkan kerjasama (resources sharing) dengan
+                      perpustakaan dan pusat informasi lain.{" "}
+                    </span>{" "}
+                    &nbsp;{" "}
+                    <span
+                      style={{ backgroundColor: "#26A69A", color: "white" }}
+                    >
+                      {" "}
+                      &nbsp; <span className="fa fa-chevron-right"></span>{" "}
+                      Menjadikan perpustakaan sebagai pusat pendidikan di
+                      lingkungan sekolah{" "}
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
-        <div class="clearfix"></div>
-        <div class="divider"></div>
 
-        <div class="container">
-          <div class="general-title text-center">
-            <h3>TUJUAN</h3>
+        <div id="struktur"></div>
+
+        <div className="container">
+          <div className="general-title text-center">
+            <h3>STRUKTUR</h3>
             <hr />
           </div>
 
-          <div class="skills text-center">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div className="stat f-container">
+            <div className="f-element col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
@@ -104,52 +173,50 @@ class ProfileContainers extends Component {
           </div>
         </div>
 
-        <div class="clearfix"></div>
-        <div class="divider"></div>
+        <div className="clearfix"></div>
+        <div id="denah"></div>
+        <div className="divider"></div>
 
-        <section class="section1">
-          <div class="container">
-            <div class="general-title text-center">
-              <h3>STRUKTUR</h3>
+        <section className="section1">
+          <div className="container">
+            <div className="general-title text-center">
+              <h3>DENAH LOKASI</h3>
               <hr />
             </div>
-
-            <div class="stat f-container">
-              <div class="f-element col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
+            <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+              <div className="skills ">
+                <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <div className="profil_details">
+                    <p>
+                      <ul className="contact_details">
+                        <li>
+                          <i className="fa fa-home"></i> Jl. Bulungan Blk. C
+                          No.1, RT.11/RW.7, Kramat Pela, Kec. Kby. Baru, Kota
+                          Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12130
+                        </li>
+                        <li>
+                          <i className="fa fa-envelope-o"></i>{" "}
+                          info@perpustakaansman70.com
+                        </li>
+                        <li>
+                          <i className="fa fa-phone-square"></i> +21 1234 5678
+                        </li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+              <div className="skills">
+                <p>map</p>
               </div>
             </div>
           </div>
         </section>
 
-        <div class="clearfix"></div>
-        <div class="divider"></div>
-
-        <div class="container">
-          <div class="general-title text-center">
-            <h3>DENAH LOKASI</h3>
-            <hr />
-          </div>
-
-          <div class="skills text-center">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="divider"></div>
+        <div className="clearfix"></div>
+        <div className="divider"></div>
       </div>
     );
   }

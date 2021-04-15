@@ -366,7 +366,7 @@
 		-webkit-box-sizing:border-box;
 	}
 	.jetmenu > li > a{
-		padding: 17px 25px;
+		padding: 0px 25px;
 	}
 	.jetmenu a{
 		width: 100%;

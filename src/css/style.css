@@ -2697,3 +2697,8 @@ a.readmore {
 section {
   overflow: hidden;
 }
+
+#collasible-nav-dropdown::after{
+  display: none; 
+  color: white;
+}

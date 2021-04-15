@@ -14,9 +14,9 @@ class HomeContainers extends Component {
     return (
       <div>
         <section id="intro">
-          <div class="container">
-            <div class="ror">
-              <div class="col-md-8 col-md-offset-2">
+          <div className="container">
+            <div className="ror">
+              <div className="col-md-8 col-md-offset-2">
                 <h1>Perpustakaan SMAN 70 Jakarta</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -29,18 +29,18 @@ class HomeContainers extends Component {
           </div>
         </section>
 
-        <section class="section1">
-          <div class="container">
-            <div class="col-lg-4 col-md-4 col-sm-4">
-              <div class="servicebox text-center">
-                <div class="service-icon">
-                  <div class="dm-icon-effect-1" data-effect="slide-left">
-                    <a href="/" class="">
+        <section className="section1">
+          <div className="container">
+            <div className="col-lg-4 col-md-4 col-sm-4">
+              <div className="servicebox text-center">
+                <div className="service-icon">
+                  <div className="dm-icon-effect-1" data-effect="slide-left">
+                    <a href="/" className="">
                       {" "}
-                      <i class="active dm-icon fa fa-bars fa-3x"></i>{" "}
+                      <i className="active dm-icon fa fa-bars fa-3x"></i>{" "}
                     </a>
                   </div>
-                  <div class="servicetitle">
+                  <div className="servicetitle">
                     <h4>Program Unggulan</h4>
                     <hr />
                   </div>
@@ -53,16 +53,16 @@ class HomeContainers extends Component {
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4">
-              <div class="servicebox text-center">
-                <div class="service-icon">
-                  <div class="dm-icon-effect-1" data-effect="slide-bottom">
-                    <a href="/" class="">
+            <div className="col-lg-4 col-md-4 col-sm-4">
+              <div className="servicebox text-center">
+                <div className="service-icon">
+                  <div className="dm-icon-effect-1" data-effect="slide-bottom">
+                    <a href="/" className="">
                       {" "}
-                      <i class="active dm-icon fa fa-laptop fa-3x"></i>{" "}
+                      <i className="active dm-icon fa fa-laptop fa-3x"></i>{" "}
                     </a>
                   </div>
-                  <div class="servicetitle">
+                  <div className="servicetitle">
                     <h4>Sistem Perpustakaan</h4>
                     <hr />
                   </div>
@@ -75,16 +75,16 @@ class HomeContainers extends Component {
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-4 col-sm-4">
-              <div class="servicebox text-center">
-                <div class="service-icon">
-                  <div class="dm-icon-effect-1" data-effect="slide-right">
-                    <a href="/" class="">
+            <div className="col-lg-4 col-md-4 col-sm-4">
+              <div className="servicebox text-center">
+                <div className="service-icon">
+                  <div className="dm-icon-effect-1" data-effect="slide-right">
+                    <a href="/" className="">
                       {" "}
-                      <i class="active dm-icon fa fa-book fa-3x"></i>{" "}
+                      <i className="active dm-icon fa fa-book fa-3x"></i>{" "}
                     </a>
                   </div>
-                  <div class="servicetitle">
+                  <div className="servicetitle">
                     <h4>Layanan Peminjaman Buku</h4>
                     <hr />
                   </div>
@@ -99,108 +99,114 @@ class HomeContainers extends Component {
           </div>
         </section>
 
-        <section class="section3 text-center">
-          <div class="general-title">
+        <section className="section3 text-center">
+          <div className="general-title">
             <h3>Koleksi Buku Terbaru</h3>
             <hr />
           </div>
-          <div class="portfolio-wrapper">
-            <div id="owl-demo" class="owl-carousel">
-              <div class="item">
-                <a data-rel="prettyPhoto" href={require("../img/portfolio_01.jpg")}>
+          <div className="portfolio-wrapper">
+            <div id="owl-demo" className="owl-carousel">
+              <div className="item">
+                <a
+                  data-rel="prettyPhoto"
+                  href={require("../img/portfolio_01.jpg")}
+                >
                   <img
-                    class="lazyOwl"
+                    className="lazyOwl"
                     src={require("../img/portfolio_01.jpg")}
                     data-src={require("../img/portfolio_01.jpg")}
                     alt=""
                   />
                   <div>
                     <span>Hobi dan Minat</span>
-                    <i class="fa fa-search"></i>
+                    <i className="fa fa-search"></i>
                   </div>
                 </a>
               </div>
-              <div class="item">
-                <a data-rel="prettyPhoto" href={require("../img/portfolio_02.jpg")}>
+              <div className="item">
+                <a
+                  data-rel="prettyPhoto"
+                  href={require("../img/portfolio_02.jpg")}
+                >
                   <img
-                    class="lazyOwl"
+                    className="lazyOwl"
                     src={require("../img/portfolio_02.jpg")}
                     data-src="../img/portfolio_02.jpg"
                     alt=""
                   />
                   <div>
                     <span>Buku TIK</span>
-                    <i class="fa fa-search"></i>
+                    <i className="fa fa-search"></i>
                   </div>
                 </a>
               </div>
-              <div class="item">
+              <div className="item">
                 <a href="single-portfolio-1.html">
                   <img
-                    class="lazyOwl"
+                    className="lazyOwl"
                     src={require("../img/portfolio_07.jpg")}
                     data-src="img/portfolio_07.jpg"
                     alt=""
                   />
                   <div>
                     <span>Buku IPA</span>
-                    <i class="fa fa-link"></i>
+                    <i className="fa fa-link"></i>
                   </div>
                 </a>
               </div>
-              <div class="item">
+              <div className="item">
                 <a href="single-portfolio-1.html">
                   <img
-                    class="lazyOwl"
+                    className="lazyOwl"
                     src={require("../img/portfolio_05.jpg")}
                     data-src="../img/portfolio_05.jpg"
                     alt=""
                   />
                   <div>
                     <span>Buku IPS</span>
-                    <i class="fa fa-link"></i>
+                    <i className="fa fa-link"></i>
                   </div>
                 </a>
               </div>
-              <div class="item">
+              <div className="item">
                 <a data-rel="prettyPhoto" href="../img/portfolio_09.jpg">
                   <img
-                    class="lazyOwl"
+                    className="lazyOwl"
                     src={require("../img/portfolio_09.jpg")}
                     data-src="../img/portfolio_09.jpg"
                     alt=""
                   />
                   <div>
                     <span>Project Name Here</span>
-                    <i class="fa fa-search"></i>
+                    <i className="fa fa-search"></i>
                   </div>
                 </a>
               </div>
-              <div class="item">
+              <div className="item">
                 <a data-rel="prettyPhoto" href="../img/portfolio_10.jpg">
                   <img
-                    class="lazyOwl"
+                    className="lazyOwl"
                     src={require("../img/portfolio_10.jpg")}
                     data-src="../img/portfolio_10.jpg"
                     alt=""
                   />
                   <div>
                     <span>Project Name Here</span>
-                    <i class="fa fa-search"></i>
+                    <i className="fa fa-search"></i>
                   </div>
                 </a>
               </div>
-              <div class="item">
+              <div className="item">
                 <a data-rel="prettyPhoto" href="../img/portfolio_06.jpg">
                   <img
-                    class="lazyOwl"
+                    className="lazyOwl"
                     src={require("../img/portfolio_06.jpg")}
                     data-src="../img/portfolio_06.jpg"
                     alt=""
                   />
                   <div>
                     <span>Project Name Here</span>
-                    <i class="fa fa-search"></i>
+                    <i className="fa fa-search"></i>
                   </div>
                 </a>
               </div>

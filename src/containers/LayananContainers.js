@@ -1,12 +1,108 @@
 import React, { Component } from "react";
 class LayananContainers extends Component {
+  constructor(props) {
+    super(props);
+    this.messagesEnd = React.createRef();
+    this.sirkulasi = React.createRef();
+    this.referensi = React.createRef();
+    this.bimbingan = React.createRef();
+    this.keanggotaan = React.createRef();
+    this.kerjasama = React.createRef();
+  }
+
+  scrollToBottom = () => {
+    const { index, selected } = this.props;
+    if (index === selected) {
+      setTimeout(() => {
+        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+  };
+
+  scrollToSirkulasi = () => {
+    const { index, selected } = this.props;
+    if (index === selected) {
+      setTimeout(() => {
+        this.sirkulasi.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+  };
+
+  scrollToReferensi = () => {
+    const { index, selected } = this.props;
+    if (index === selected) {
+      setTimeout(() => {
+        this.referensi.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+  };
+
+  scrollToBimbingan = () => {
+    const { index, selected } = this.props;
+    if (index === selected) {
+      setTimeout(() => {
+        this.bimbingan.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+  };
+
+  scrollToKeanggotaan = () => {
+    const { index, selected } = this.props;
+    if (index === selected) {
+      setTimeout(() => {
+        this.keanggotaan.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+  };
+
+  scrollToKerjasama = () => {
+    const { index, selected } = this.props;
+    if (index === selected) {
+      setTimeout(() => {
+        this.kerjasama.scrollIntoView({ behavior: "smooth" });
+      }, 0);
+    }
+  };
+
+  componentDidMount() {
+    if (this.props.layanan === "sirkulasi") {
+      this.scrollToSirkulasi();
+    } else if (this.props.layanan === "referensi") {
+      this.scrollToReferensi();
+    } else if (this.props.layanan === "bimbingan") {
+      this.scrollToBimbingan();
+    } else if (this.props.layanan === "keanggotaan") {
+      this.scrollToKeanggotaan();
+    } else if (this.props.layanan === "kerjasama") {
+      this.scrollToKerjasama();
+    } else {
+      this.scrollToBottom();
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.props.layanan === "sirkulasi") {
+      this.scrollToSirkulasi();
+    } else if (this.props.layanan === "referensi") {
+      this.scrollToReferensi();
+    } else if (this.props.layanan === "bimbingan") {
+      this.scrollToBimbingan();
+    } else if (this.props.layanan === "keanggotaan") {
+      this.scrollToKeanggotaan();
+    } else if (this.props.layanan === "kerjasama") {
+      this.scrollToKerjasama();
+    } else {
+      this.scrollToBottom();
+    }
+  }
+
   render() {
     return (
       <div>
-        <section class="post-wrapper-top">
-          <div class="container">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <ul class="breadcrumb">
+        <section className="post-wrapper-top">
+          <div className="container">
+            <div>
+              <ul className="breadcrumb">
                 <li>
                   <a href="index.html">Home</a>
                 </li>
@@ -17,151 +113,21 @@ class LayananContainers extends Component {
           </div>
         </section>
 
-        <section class="section1">
-          <div class="container clearfix">
-            <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
-              <div class="clearfix"></div>
-
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="servicebox text-center">
-                  <div class="service-icon">
-                    <div class="dm-icon-effect-1" data-effect="slide-bottom">
-                      <a href="/" class="">
-                        {" "}
-                        <i class="active dm-icon dm-icon-anak fa fa-user fa-3x"></i>{" "}
-                      </a>
-                    </div>
-                    <div class="servicetitle">
-                      <h4>Layanan Anak</h4>
-                      <hr />
-                    </div>
-                    <p>
-                      Layanan perpustakaan dengan memberikan bahan bacaan kepada
-                      anak semenjak dini, menyediakan ruangan membaca khusus
-                      untuk anak.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="servicebox text-center">
-                  <div class="service-icon">
-                    <div class="dm-icon-effect-1" data-effect="slide-bottom">
-                      <a href="/" class="">
-                        {" "}
-                        <i class="active dm-icon dm-icon-sirkulasi fa fa-random fa-3x"></i>{" "}
-                      </a>
-                    </div>
-                    <div class="servicetitle">
-                      <h4>Layanan Sirkulasi</h4>
-                      <hr />
-                    </div>
-                    <p>
-                      It has survived not only five centuries, but also the leap
-                      into electronic typesetting, remaining essentially
-                      unchanged.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="servicebox text-center">
-                  <div class="service-icon">
-                    <div class="dm-icon-effect-1" data-effect="slide-bottom">
-                      <a href="/" class="">
-                        {" "}
-                        <i class="active dm-icon dm-icon-ref fa fa-book fa-3x"></i>{" "}
-                      </a>
-                    </div>
-                    <div class="servicetitle">
-                      <h4>Layanan Referensi</h4>
-                      <hr />
-                    </div>
-                    <p>
-                      It has survived not only five centuries, but also the leap
-                      into electronic typesetting, remaining essentially
-                      unchanged.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="servicebox text-center">
-                  <div class="service-icon">
-                    <div class="dm-icon-effect-1" data-effect="slide-bottom">
-                      <a href="/" class="">
-                        {" "}
-                        <i class="active dm-icon dm-icon-bimbingan fa fa-bullhorn fa-3x"></i>{" "}
-                      </a>
-                    </div>
-                    <div class="servicetitle">
-                      <h4>Layanan Bimbingan Pemustaka</h4>
-                      <hr />
-                    </div>
-                    <p>
-                      It has survived not only five centuries, but also the leap
-                      into electronic typesetting, remaining essentially
-                      unchanged.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="servicebox text-center">
-                  <div class="service-icon">
-                    <div class="dm-icon-effect-1" data-effect="slide-bottom">
-                      <a href="/" class="">
-                        {" "}
-                        <i class="active dm-icon dm-icon-anggota glyphicon glyphicon-user fa-3x"></i>{" "}
-                      </a>
-                    </div>
-                    <div class="servicetitle">
-                      <h4>Layanan Keanggotaan</h4>
-                      <hr />
-                    </div>
-                    <p>
-                      Merupakan layanan mengadministrasikan data anggota untuk
-                      memudahkan proses layanan pengguna perpustakaan.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-md-4 col-sm-6">
-                <div class="servicebox text-center">
-                  <div class="service-icon">
-                    <div class="dm-icon-effect-1" data-effect="slide-bottom">
-                      <a href="/" class="">
-                        {" "}
-                        <i class="active dm-icon dm-icon-kerjasama fa fa-thumbs-up fa-3x"></i>{" "}
-                      </a>
-                    </div>
-                    <div class="servicetitle">
-                      <h4>Layanan Kerjasama</h4>
-                      <hr />
-                    </div>
-                    <p>
-                      It has survived not only five centuries, but also the leap
-                      into electronic typesetting, remaining essentially
-                      unchanged.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="clearfix"></div>
-              <div class="divider"></div>
-              <div id="anak"></div>
-
-              <h4 class="title" style={{ color: "#3498db" }}>
-                <i class="fa fa-user"></i> Layanan Anak
+        <section className="section1">
+          <div className="container ">
+            <div className="col-lg-12 col-md-12 col-sm-12 clearfix">
+              <div className="clearfix">&nbsp;</div>
+              <div
+                id="anak"
+                ref={(el) => {
+                  this.messagesEnd = el;
+                }}
+              ></div>
+              <h4 className="title" style={{ color: "#3498db" }}>
+                <i className="fa fa-user"></i> Layanan Anak
               </h4>
-              <div class="row">
-                <div class="col-lg-6">
+              <div className="row">
+                <div className="col-lg-6">
                   <p>
                     {" "}
                     Kebiasaan membaca harus dilatih sejak usia dini, yaitu
@@ -201,23 +167,29 @@ class LayananContainers extends Component {
                     dini.
                   </p>
                 </div>
-                <div class="col-lg-6">
+                <div className="col-lg-6">
                   <img
-                    class="img-responsive"
+                    className="img-responsive"
                     src={require("../img/img-layananak.png")}
                     alt=""
                   />
                 </div>
               </div>
 
-              <div class="clearfix"></div>
-              <div class="divider"></div>
-              <div id="sirkulasi"></div>
-              <h4 class="title" style={{ color: "#F1C40F" }}>
-                <i class="fa fa-random"></i> Layanan Sirkulasi
+              <div className="clearfix">&nbsp;</div>
+              <div className="clearfix">&nbsp;</div>
+              <div
+                id="sirkulasi"
+                ref={(el) => {
+                  this.sirkulasi = el;
+                }}
+              ></div>
+
+              <h4 className="title" style={{ color: "#F1C40F" }}>
+                <i className="fa fa-random"></i> Layanan Sirkulasi
               </h4>
-              <div class="row">
-                <div class="col-lg-6">
+              <div className="row">
+                <div className="col-lg-6 col-md-6 col-sm-12">
                   <p>
                     {" "}
                     Layanan sirkulasi bertujuan untuk membantu pemustaka dalam
@@ -232,19 +204,204 @@ class LayananContainers extends Component {
                     bagian layanan sirkulasi.
                   </p>
                 </div>
-                <div class="col-lg-6">
+                <div className="col-lg-6 col-md-6 col-sm-12">
                   <img
-                    class="img-responsive"
+                    className="img-responsive"
                     src={require("../img/img-sirkulasi.jpg")}
                     alt=""
                   />
                 </div>
               </div>
+              <div className="clearfix">&nbsp;</div>
+              <div className="clearfix">&nbsp;</div>
+              <div
+                id="referensi"
+                ref={(el) => {
+                  this.referensi = el;
+                }}
+              ></div>
+              <h4 className="title" style={{ color: "#26A69A" }}>
+                <i className="fa fa-book"></i> Layanan Referensi
+              </h4>
+              <div className="row">
+                <div className="col-lg-12 col-md-12 col-sm-12">
+                  <p>
+                    {" "}
+                    Layanan Referensi adalah merupakan layanan pokok di
+                    perpustakaan yang secara spesifik melayankan koleksi
+                    referensi kepada para pemustaka.
+                  </p>
+                  <p>
+                    Jasa layanan referensi merupakan salah satu kegiatan yang
+                    ada untuk pemustaka dalam mencari informasi yang
+                    dibutuhkannya. Layanan referensi juga suatu kegiatan
+                    pelayanan untuk membantu pemustaka menemukan informasi
+                    dengan cara menerima pertanyaan-pertanyaan dari para
+                    pemustaka dan menjawab dengan menggunakan koleksi referensi
+                    yang ada; Membimbing pemustaka untuk menemukan koleksi
+                    referensi dan mencari informasi yang dibutuhkan dan
+                    penggunaan bahan pustaka koleksi referensi; Memberikan
+                    pengarahan dan bantuan pada pengguna mengenai cara
+                    menggunakan perpustakaan maupun koleksi referensi;
+                    Memberikan petunjuk tentang bagaimana cara memilih dan
+                    memilah bahan pustaka dalam kelompok koleksi referensi yang
+                    bermutu dan berbobot ilmiah agar diperoleh sumber referensi
+                    yang berdaya guna maksimal.
+                  </p>
+                </div>
+              </div>
 
-              <div id="referensi"></div>
-              <div class="clearfix"></div>
-              <div class="divider"></div>
-              <div class="clearfix"></div>
+              <div className="row">
+                <div className="col-lg-6 col-md-6 col-sm-12">
+                  Sedangkan tujuan layanan referensi adalah sebagai berikut:
+                  <ul>
+                    <li>
+                      Memungkinkan pengguna menemukan informasi secara cepat dan
+                      tepat
+                    </li>
+                    <li>
+                      Memungkinkan pengguna menelusur informasi dengan pilihan
+                      yang lebih luas
+                    </li>
+                    <li>
+                      Memungkinkan pengguna menggunakan koleksi referensi dengan
+                      lebih tepat guna
+                    </li>
+                  </ul>
+                  <p>
+                    Adapun Jenis Referensi yang terdapat di Perpustakaan SMA
+                    Negeri 70 Jakarta, diantaranya:
+                  </p>
+                  <ol>
+                    <li>Ensiklopedia</li>
+                    <li>Peta</li>
+                    <li>
+                      Kamus
+                      <ul type="circle">
+                        <li>Kamus Bahasa Indonesia</li>
+                        <li>Kamus Bahasa Inggris</li>
+                        <li>Kamus Bahasa Jerman</li>
+                        <li>Kamus Bahasa Perancis</li>
+                      </ul>
+                    </li>
+                    <li>Bibliografi</li>
+                    <li>Atlas</li>
+                    <li>Globe</li>
+                    <li>Katalog</li>
+                    <li>Indeks</li>
+                    <li>Karya Ilmiah</li>
+                  </ol>
+                </div>
+                <div className="col-lg-6 col-md-6 col-sm-12">
+                  <p>
+                    <img src={require("../img/img-referensi.jpg")} alt="" />
+                  </p>
+                </div>
+              </div>
+              <div className="clearfix">&nbsp;</div>
+              <div className="clearfix">&nbsp;</div>
+              <div
+                id="bimbingan"
+                ref={(el) => {
+                  this.bimbingan = el;
+                }}
+              ></div>
+
+              <h4 className="title" style={{ color: "#EC407A" }}>
+                <i className="fa fa-bullhorn"></i> Layanan Bimbingan Pemustaka
+              </h4>
+              <div className="row">
+                <div className="col-lg-6 col-md-6 col-sm-12">
+                  <p>
+                    {" "}
+                    Layanan sirkulasi bertujuan untuk membantu pemustaka dalam
+                    proses peminjaman, pengembalian, dan perpanjangan bahan
+                    pustaka. Prosedur layanan peminjaman dalam sirkulasi ini
+                    meliputi aktivitas pemilihan buku sampai buku bisa dipinjam
+                    oleh pemustaka dengan melalui proses peminjaman di bagian
+                    layanan sirkulasi. Sedangkan prosedur layanan pengembalian
+                    dan perpanjangan bahan pustaka ini meliputi aktivitas
+                    penyerahan pustaka yang dipinjam sampai dengan petugas
+                    memproses pengembalian ataupun perpanjangan pustaka di
+                    bagian layanan sirkulasi.
+                  </p>
+                </div>
+                <div className="col-lg-6 col-md-6 col-sm-12">
+                  <img
+                    className="img-responsive"
+                    src={require("../img/img-bimbingan.jpg")}
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div className="clearfix">&nbsp;</div>
+              <div className="clearfix">&nbsp;</div>
+              <div
+                id="anggota"
+                ref={(el) => {
+                  this.keanggotaan = el;
+                }}
+              ></div>
+
+              <h4 className="title" style={{ color: "grey" }}>
+                <i className="fa fa-bullhorn"></i> Layanan Keanggotaan
+              </h4>
+              <div className="row">
+                <div className="col-lg-12 col-md-12 col-sm-12">
+                  <p>
+                    {" "}
+                    Merupakan layanan mengadministrasikan data anggota untuk
+                    memudahkan proses layanan pengguna perpustakaan.
+                  </p>
+                  <p>Prosedur layanan ini meliputi:</p>
+                  <p>
+                    <img
+                      className="img-responsive"
+                      src={require("../img/img-anggota.JPG")}
+                      alt=""
+                    />
+                  </p>
+                </div>
+              </div>
+
+              <div className="clearfix">&nbsp;</div>
+              <div className="clearfix">&nbsp;</div>
+              <div
+                id="kerjasama"
+                ref={(el) => {
+                  this.kerjasama = el;
+                }}
+              ></div>
+
+              <h4 className="title" style={{ color: "#ff6161" }}>
+                <i className="fa fa-bullhorn"></i> Layanan Kerjasama
+              </h4>
+              <div className="row">
+                <div className="col-lg-12 col-md-12 col-sm-12">
+                  <p>
+                    {" "}
+                    Layanan Kerjasama merupakan program perpustakaan untuk
+                    meningkatkan eksistensi perpustakaan SMAN 70 Jakarta ke
+                    masyarakat luas. Sampai saat ini perpustakaan SMA Negeri 70
+                    Jakarta telah bekerjasama dengan 11 Organisasi maupun
+                    sekolah disekitaran SMAN 70 Jakarta, diantaranya:
+                    <ol>
+                      <li>Komite Sekolah</li>
+                      <li>Guru</li>
+                      <li>Lingkungan RW</li>
+                      <li>Majalah Parahyangan</li>
+                      <li>SMA Negeri 46 Jakarta</li>
+                      <li>Dinas Sosial </li>
+                      <li>BI Corner</li>
+                      <li>Gramedia</li>
+                      <li>SMA Negeri 6 Jakarta</li>
+                      <li>Aksamaraya</li>
+                      <li>RedHat Indonesia</li>
+                    </ol>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

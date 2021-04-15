@@ -6,7 +6,7 @@ class Layout extends Component {
   render() {
     return (
       <Auxiliary>
-        <Headers />
+        <Headers setLayanan={this.props.setLayanan} />
         {this.props.children}
         <Footers />
       </Auxiliary>
