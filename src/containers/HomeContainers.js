@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import "../lib/bootstrap/css/bootstrap.min.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import "../lib/font-awesome/css/font-awesome.min.css";
-// import "../lib/prettyphoto/css/prettyphoto.css";
-// import "../lib/hover/hoverex-all.css";
-// import "../lib/jetmenu/jetmenu.css";
 import "../lib/owl-carousel/owl-carousel.css";
-// import "../css/style.css";
-// import "../css/colors/blue.css";
 
 class HomeContainers extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div>

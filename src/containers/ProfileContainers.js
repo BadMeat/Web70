@@ -1,34 +1,13 @@
 import React, { Component } from "react";
 
-import { isMobile } from "react-device-detect";
-
 class ProfileContainers extends Component {
-  constructor(props) {
-    super(props);
-    this.messagesEnd = React.createRef();
-  }
-
-  scrollToBottom = () => {
-    const { index, selected } = this.props;
-    if (index === selected) {
-      setTimeout(() => {
-        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
-      }, 0);
-    }
-  };
-
   componentDidMount() {
-    if (isMobile) {
-      this.scrollToBottom();
-    }
+    window.scrollTo(0, 0);
   }
 
   componentDidUpdate() {
-    if (isMobile) {
-      this.scrollToBottom();
-    }
+    window.scrollTo(0, 0);
   }
-
   render() {
     return (
       <div>
@@ -49,12 +28,7 @@ class ProfileContainers extends Component {
         <section className="section1">
           <div className="container clearfix">
             <div className="col-lg-12 col-md-12 col-sm-12 clearfix">
-              <div
-                className="general-title text-center"
-                ref={(el) => {
-                  this.messagesEnd = el;
-                }}
-              >
+              <div className="general-title text-center">
                 <h3>VISI MISI</h3>
                 <hr />
               </div>

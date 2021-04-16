@@ -1,12 +1,19 @@
 import React, { Component } from "react";
 class LaporanTriwulanContainers extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  componentDidUpdate() {
+    window.scrollTo(0, 0);
+  }
   render() {
     return (
       <div>
-        <section class="post-wrapper-top">
-          <div class="container">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <ul class="breadcrumb">
+        <section className="post-wrapper-top">
+          <div className="container">
+            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+              <ul className="breadcrumb">
                 <li>
                   <a href="home.html">Home</a>
                 </li>
@@ -16,12 +23,12 @@ class LaporanTriwulanContainers extends Component {
             </div>
           </div>
         </section>
-        <section class="section1">
-          <div class="container clearfix">
-            <div class="row">
-              <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 clearfix">
+        <section className="section1">
+          <div className="container clearfix">
+            <div className="row">
+              <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 clearfix">
                 <h4>ANGGOTA</h4>
-                <table class="table table-striped" data-effect="fade">
+                <table className="table table-striped" data-effect="fade">
                   <thead>
                     <tr>
                       <th>Jenis Anggota</th>
@@ -54,10 +61,10 @@ class LaporanTriwulanContainers extends Component {
               </div>
             </div>
 
-            <div class="row">
-              <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div className="row">
+              <div className=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <h4>KOLEKSI</h4>
-                <table class="table table-striped" data-effect="fade">
+                <table className="table table-striped" data-effect="fade">
                   <thead>
                     <tr>
                       <th>ID</th>
@@ -102,14 +109,14 @@ class LaporanTriwulanContainers extends Component {
                   </tbody>
                 </table>
               </div>
-              <div class=" col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
+              <div className=" col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
             </div>
 
-            <div class="row">
-              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix">
-                <div class="clearfix">&nbsp;</div>
+            <div className="row">
+              <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix">
+                <div className="clearfix">&nbsp;</div>
                 <h4>KUNJUNGAN</h4>
-                <table class="table table-striped" data-effect="fade">
+                <table className="table table-striped" data-effect="fade">
                   <thead>
                     <tr>
                       <th>No</th>
@@ -136,14 +143,14 @@ class LaporanTriwulanContainers extends Component {
                   </tbody>
                 </table>
               </div>
-              <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix"></div>
+              <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix"></div>
             </div>
 
-            <div class="row">
-              <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix">
-                <div class="clearfix">&nbsp;</div>
+            <div className="row">
+              <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix">
+                <div className="clearfix">&nbsp;</div>
                 <h4>SIRKULASI</h4>
-                <table class="table table-striped" data-effect="fade">
+                <table className="table table-striped" data-effect="fade">
                   <thead>
                     <tr>
                       <th>No</th>
@@ -171,7 +178,7 @@ class LaporanTriwulanContainers extends Component {
                   </tbody>
                 </table>
               </div>
-              <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix"></div>
+              <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix"></div>
             </div>
           </div>
         </section>

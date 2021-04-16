@@ -15,6 +15,7 @@ import ProfileContainers from "./containers/ProfileContainers";
 import LayananContainers from "./containers/LayananContainers";
 import LaporanBulananContainers from "./containers/LaporanBulananContainers";
 import LaporanTriwulanContainers from "./containers/LaporanTriwulanContainers";
+import LaporanSemesterContainer from "./containers/LaporanSemesterContainer";
 
 class App extends Component {
   state = {
@@ -43,6 +44,7 @@ class App extends Component {
             path="/laporanTriwulan"
             component={LaporanTriwulanContainers}
           />
+          <Route path="/laporanSemester" component={LaporanSemesterContainer} />
         </Switch>
       </Layout>
     );

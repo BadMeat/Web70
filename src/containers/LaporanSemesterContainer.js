@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
-
-class LaporanBulananContainers extends Component {
+class LaporanSemesterContainer extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -20,51 +17,16 @@ class LaporanBulananContainers extends Component {
                 <li>
                   <a href="home.html">Home</a>
                 </li>
-                <li>Laporan Bulanan</li>
+                <li>Laporan Semester</li>
               </ul>
-              <h2>LAPORAN BULANAN</h2>
+              <h2>LAPORAN SEMESTER</h2>
             </div>
           </div>
         </section>
-
         <section className="section1">
           <div className="container clearfix">
             <div className="row">
               <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 clearfix">
-                <div className="dropdown">
-                  <div style={{ display: "flex" }}>
-                    <DropdownButton id="dropdown-basic-button" title="Bulan">
-                      <Dropdown.Item href="#/action-1">Januari</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Februari</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Maret</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">April</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Mei</Dropdown.Item>
-                    </DropdownButton>
-                    <div style={{ marginLeft: 10 }}>
-                      <DropdownButton
-                        id="dropdown-basic-button"
-                        title="Tahunan"
-                      >
-                        <Dropdown.Item href="#/action-2">2021</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">2020</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">2019</Dropdown.Item>
-                      </DropdownButton>
-                    </div>
-                  </div>
-
-                  {/* <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li>
-                      <a href="/">2021</a>
-                    </li>
-                    <li>
-                      <a href="/">2020</a>
-                    </li>
-                    <li>
-                      <a href="/">2019</a>
-                    </li>
-                  </ul> */}
-                </div>
-                <div className="clearfix">&nbsp;</div>
                 <h4>ANGGOTA</h4>
                 <table className="table table-striped" data-effect="fade">
                   <thead>
@@ -153,8 +115,7 @@ class LaporanBulananContainers extends Component {
             <div className="row">
               <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix">
                 <div className="clearfix">&nbsp;</div>
-                <h4>KUNJUNGAN DRIVE THRU</h4>
-                <p>Kunjungan Tanpa Rombel</p>
+                <h4>KUNJUNGAN</h4>
                 <table className="table table-striped" data-effect="fade">
                   <thead>
                     <tr>
@@ -181,7 +142,6 @@ class LaporanBulananContainers extends Component {
                     </tr>
                   </tbody>
                 </table>
-                <p className="small">Kunjungan dengan Rombel (klasikal)</p>
               </div>
               <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix"></div>
             </div>
@@ -189,7 +149,7 @@ class LaporanBulananContainers extends Component {
             <div className="row">
               <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix">
                 <div className="clearfix">&nbsp;</div>
-                <h4>SIRKULASI DRIVE THRU*</h4>
+                <h4>SIRKULASI</h4>
                 <table className="table table-striped" data-effect="fade">
                   <thead>
                     <tr>
@@ -226,4 +186,4 @@ class LaporanBulananContainers extends Component {
     );
   }
 }
-export default LaporanBulananContainers;
+export default LaporanSemesterContainer;
