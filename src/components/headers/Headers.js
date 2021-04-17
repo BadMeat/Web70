@@ -392,7 +392,13 @@ class Headers extends Component {
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
-                Sistem Perpustakaan
+                <a
+                  onClick={() =>
+                    window.open("http://localhost/Bulungan", "_blank")
+                  }
+                >
+                  Sistem PERPUSTAKAAN
+                </a>
               </NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
