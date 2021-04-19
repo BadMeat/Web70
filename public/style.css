@@ -131,7 +131,7 @@ a.remove {
   border-width: 1px
 }
 
-p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form, {
+p, pre, ul, ol, dl, dd, blockquote, address, table, fieldset, form {
   margin-bottom: 20px;
 }
 

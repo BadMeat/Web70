@@ -1,8 +1,13 @@
 import React, { Component } from "react";
+import FormIsianModal from "../components/modals/FormIsianModal";
 import "../lib/bootstrap/css/bootstrap.min.css";
 import "../lib/owl-carousel/owl-carousel.css";
 
 class HomeContainers extends Component {
+  state = {
+    modalIsianShow: false,
+  };
+
   componentDidMount() {
     window.scrollTo(0, 0);
   }
@@ -11,19 +16,28 @@ class HomeContainers extends Component {
     window.scrollTo(0, 0);
   }
 
+  modalIsClick = (bool) => {
+    this.setState({
+      modalIsianShow: bool,
+    });
+  };
+
   render() {
     return (
       <div>
+        {/* <button onClick={() => this.modalIsClick(true)}>Modal dong pak</button> */}
+        <FormIsianModal
+          show={this.state.modalIsianShow}
+          onHide={() => this.modalIsClick(false)}
+        />
         <section id="intro">
           <div className="container">
             <div className="ror">
               <div className="col-md-8 col-md-offset-2">
                 <h1>Perpustakaan SMAN 70 Jakarta</h1>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat
+                  Terwujudnya Perpustakaan yang Respresentatif sebagai penyedia
+                  informasi ilmu pengetahuan, teknologi, seni dan agama
                 </p>
               </div>
             </div>
@@ -46,9 +60,8 @@ class HomeContainers extends Component {
                     <hr />
                   </div>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry"s
-                    standard dummy text ever since..
+                    Kumpulan kegiatan yang Inovasi dan kreatif yang yang
+                    dikelola oleh Perpustakaan SMAN 70 Jakarta
                   </p>
                 </div>
               </div>
@@ -68,9 +81,8 @@ class HomeContainers extends Component {
                     <hr />
                   </div>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry"s
-                    standard dummy text ever since..
+                    Search Engine untuk pencarian buku di perpustakaan SMAN 70
+                    Jakarta
                   </p>
                 </div>
               </div>
@@ -90,9 +102,9 @@ class HomeContainers extends Component {
                     <hr />
                   </div>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry"s
-                    standard dummy text ever since..
+                    Layanan Sirkulasi merupakan layanan peminjaman dan
+                    pengembalian buku, dengan batas peminjaman selama 7 hari
+                    sejak awal peminjaman
                   </p>
                 </div>
               </div>

@@ -8,7 +8,7 @@ const menuItemOpac = (props) => {
     <div>
       {/* Menu Layanan */}
       <div
-        style={{ paddingTop: "10px", fontSize: '15px' }}
+        style={{ paddingTop: "10px", fontSize: "15px" }}
         onClick={() => props.menu()}
         aria-expanded={props.menuIsOpen}
       >
@@ -17,16 +17,33 @@ const menuItemOpac = (props) => {
       {/* Sub Menu Layanan */}
       <Collapse in={props.menuIsOpen}>
         <div style={{ paddingLeft: "40px" }}>
-          <SubMenuMobile
+          {/* <SubMenuMobile
             setMenuCollapse={props.setMenuCollapse}
             to={"/opac"}
             title="Visitor Counter"
-          />
-          <SubMenuMobile
+          /> */}
+          <NavLink style={{ color: "black" }} to={"/opac"}>
+            <div style={{ height: "10px" }} />
+            <a
+              onClick={() => window.open("http://localhost/lib70/?p=visitor", "_blank")}
+            >
+              Visitor Counter
+            </a>
+          </NavLink>
+          {/* <SubMenuMobile
             setMenuCollapse={props.setMenuCollapse}
             to={"/opac"}
+            onClick={newTab}
             title="Sistem Perpustakaan"
-          />
+          /> */}
+          <NavLink style={{ color: "black" }} to={"/opac"}>
+            <div style={{ height: "10px" }} />
+            <a
+              onClick={() => window.open("http://localhost/lib70/?p=visitor", "_blank")}
+            >
+              Sistem PERPUSTAKAAN
+            </a>
+          </NavLink>
           <SubMenuMobile
             setMenuCollapse={props.setMenuCollapse}
             to={"/opac"}

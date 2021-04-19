@@ -6,9 +6,8 @@ const footers = (props) => {
         <div className="widget col-lg-3 col-md-3 col-sm-12">
           <h4 className="title">Tentang Kami</h4>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry"s standard dummy text
-            ever since the 1500s..
+            Terwujudnya Perpustakaan yang Respresentatif sebagai penyedia
+            informasi ilmu pengetahuan, teknologi, seni dan agama
           </p>
           <a className="button small" href="/">
             read more
@@ -70,9 +69,9 @@ const footers = (props) => {
               <i className="fa fa-phone-square"></i> +21 1234 5678
             </li>
             <li>
-              <i className="fa fa-home"></i> Jl. Bulungan Blk. C No.1, RT.11/RW.7,
-              Kramat Pela, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus
-              Ibukota Jakarta 12130
+              <i className="fa fa-home"></i> Jl. Bulungan Blk. C No.1,
+              RT.11/RW.7, Kramat Pela, Kec. Kby. Baru, Kota Jakarta Selatan,
+              Daerah Khusus Ibukota Jakarta 12130
             </li>
             <li>
               <a href="/">

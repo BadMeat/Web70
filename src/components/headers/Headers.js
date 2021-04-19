@@ -8,6 +8,12 @@ import MenuItemMobile from "./MenuItemMobile";
 import MenuItemProfil from "./MenuProfil/MenuItemProfil";
 import MenuItemOpac from "./MenuOpac/MenuItemOpac";
 import MenuItemLaporan from "./MenuLaporan/MenuItemLaporan";
+import MenuItemAktifitas from "./MenuAktifitas/MenuAktifitas";
+
+const navLinkStyle = {
+  color: "black",
+  textDecoration: "none",
+};
 
 class Headers extends Component {
   state = {
@@ -272,6 +278,16 @@ class Headers extends Component {
                 setMenuCollapse={this.setMenuCollapse}
                 menuIsOpen={this.state.menuLaporanIsOpen}
               />
+              <MenuItemAktifitas
+                menu={() =>
+                  this.setMenuIsOpen(
+                    "menuAktivitasIsOpen",
+                    this.state.menuAktivitasIsOpen
+                  )
+                }
+                setMenuCollapse={this.setMenuCollapse}
+                menuIsOpen={this.state.menuAktivitasIsOpen}
+              />
             </div>
           </Collapse>
         </ul>
@@ -301,47 +317,47 @@ class Headers extends Component {
               show={this.state.layanan}
             >
               <NavDropdown.Item onClick={() => this.navToScroolBot("anak")}>
-                <NavLink style={{ color: "black" }} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layanan"}>
                   Layanan Anak
                 </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item
                 onClick={() => this.navToScroolBot("sirkulasi")}
               >
-                <NavLink style={{ color: "black" }} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layanan"}>
                   Layanan Sirkulasi
                 </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item
                 onClick={() => this.navToScroolBot("referensi")}
               >
-                <NavLink style={{ color: "black" }} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layanan"}>
                   Layanan Referensi
                 </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item
                 onClick={() => this.navToScroolBot("bimbingan")}
               >
-                <NavLink style={{ color: "black" }} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layanan"}>
                   Layanan Bimbingan Pemustaka
                 </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item
                 onClick={() => this.navToScroolBot("keanggotaan")}
               >
-                <NavLink style={{ color: "black" }} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layanan"}>
                   Layanan Keanggotaan
                 </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item
                 onClick={() => this.navToScroolBot("kerjasama")}
               >
-                <NavLink style={{ color: "black" }} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layanan"}>
                   Layanan Kerjasama
                 </NavLink>
               </NavDropdown.Item>
@@ -361,15 +377,15 @@ class Headers extends Component {
               show={this.state.profil}
             >
               <NavDropdown.Item onClick={() => this.setHover("profilActive")}>
-                <NavLink style={{ color: "black" }} to={"/profile"}>
+                <NavLink style={navLinkStyle} to={"/profile"}>
                   Visi Misi
                 </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("profilActive")}>
                 Tujuan
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("profilActive")}>
                 Struktur Organisasi Perpustakaan
               </NavDropdown.Item>
@@ -388,23 +404,29 @@ class Headers extends Component {
               show={this.state.opac}
             >
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
-                Visitor Counter
+                <a
+                  onClick={() =>
+                    window.open("http://localhost/lib70/?p=visitor", "_blank")
+                  }
+                >
+                  Visitor Counter
+                </a>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
                 <a
                   onClick={() =>
-                    window.open("http://localhost/Bulungan", "_blank")
+                    window.open("http://localhost/lib70/", "_blank")
                   }
                 >
                   Sistem PERPUSTAKAAN
                 </a>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
                 e-DTS
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
                 e-DDC
               </NavDropdown.Item>
@@ -423,25 +445,27 @@ class Headers extends Component {
               show={this.state.laporan}
             >
               <NavDropdown.Item onClick={() => this.setHover("laporanActive")}>
-                <NavLink style={{ color: "black" }} to={"/laporanBulanan"}>
+                <NavLink style={navLinkStyle} to={"/laporanBulanan"}>
                   {" "}
                   Bulanan
                 </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("laporanActive")}>
-                <NavLink style={{ color: "black" }} to={"/laporanTriwulan"}>
+                <NavLink style={navLinkStyle} to={"/laporanTriwulan"}>
                   {" "}
                   Triwulan
                 </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("laporanActive")}>
-                Tahunan
+                <NavLink style={navLinkStyle} to={"/laporanTahunan"}>
+                  Tahunan
+                </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("laporanActive")}>
-                <NavLink style={{ color: "black" }} to={"/laporanSemester"}>
+                <NavLink style={navLinkStyle} to={"/laporanSemester"}>
                   Semester
                 </NavLink>
               </NavDropdown.Item>
@@ -462,9 +486,11 @@ class Headers extends Component {
               <NavDropdown.Item
                 onClick={() => this.setHover("aktivitasActive")}
               >
-                Program Unggulan
+                <NavLink style={navLinkStyle} to={"/programUnggulan"}>
+                  Program Unggulan
+                </NavLink>
               </NavDropdown.Item>
-              <NavDropdown.Divider />
+              <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item
                 onClick={() => this.setHover("aktivitasActive")}
               >
@@ -478,11 +504,6 @@ class Headers extends Component {
   };
 
   render() {
-    // let x = ["jetmenu  blue"];
-    // if (this.state.scrolled) {
-    //   x.push("scrolled");
-    // }
-
     return (
       <div>
         {/* <body> */}
@@ -570,228 +591,7 @@ class Headers extends Component {
               <div className="col-lg-9 col-md-12 col-sm-12">
                 <div id="nav" className="right">
                   <div className="container clearfix">
-                    {/* Main Menu */}
-                    {/* <ul id="jetmenu" className={x.join(" ")}>
-                      <li className={this.state.homeActive}>
-                        <a onClick={() => this.setHover("homeActive")}>
-                          <Nav.Item>
-                            <Nav.Link className="fa fa-home">
-                              <NavLink to={"/"}> Home</NavLink>
-                            </Nav.Link>
-                          </Nav.Item>
-                        </a>
-                      </li>
-                      <li
-                        onClick={this.showLayananDropdown}
-                        // onMouseEnter={this.showLayananDropdown}
-                        onMouseLeave={this.hideLayananDropdown}
-                        className={this.state.layananActive}
-                      >
-                        <a>
-                          <NavDropdown
-                            title="Layanan"
-                            id="collasible-nav-dropdown"
-                            show={this.state.layanan}
-                          >
-                            <NavDropdown.Item
-                              onClick={() => this.navToScroolBot("anak")}
-                            >
-                              <NavLink
-                                style={{ color: "black" }}
-                                to={"/layanan"}
-                              >
-                                Layanan Anak
-                              </NavLink>
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.navToScroolBot("sirkulasi")}
-                            >
-                              <NavLink
-                                style={{ color: "black" }}
-                                to={"/layanan"}
-                              >
-                                Layanan Sirkulasi
-                              </NavLink>
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.navToScroolBot("referensi")}
-                            >
-                              Layanan Referensi
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.navToScroolBot("bimbingan")}
-                            >
-                              Layanan Bimbingan Pemustaka
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.navToScroolBot("keanggotaan")}
-                            >
-                              Layanan Keanggotaan
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.navToScroolBot("kerjasama")}
-                            >
-                              Layanan Kerjasama
-                            </NavDropdown.Item>
-                          </NavDropdown>
-                        </a>
-                      </li>
-                      <li
-                        onClick={this.showProfilDropdown}
-                        // onTouchStart={this.showProfilDropdown}
-                        onMouseLeave={this.hideProfilDropdown}
-                        className={this.state.profilActive}
-                      >
-                        <a>
-                          <NavDropdown
-                            title="Profil"
-                            id="collasible-nav-dropdown"
-                            show={this.state.profil}
-                          >
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("profilActive")}
-                            >
-                              <NavLink
-                                style={{ color: "black" }}
-                                to={"/profile"}
-                              >
-                                Visi Misi
-                              </NavLink>
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("profilActive")}
-                            >
-                              Tujuan
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("profilActive")}
-                            >
-                              Struktur Organisasi Perpustakaan
-                            </NavDropdown.Item>
-                          </NavDropdown>
-                        </a>
-                      </li>
-                      <li
-                        onClick={this.showOpacDropdown}
-                        onMouseLeave={this.hideOpacDropdown}
-                        className={this.state.opacActive}
-                      >
-                        <a>
-                          <NavDropdown
-                            title="O P A C"
-                            id="collasible-nav-dropdown"
-                            show={this.state.opac}
-                          >
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("opacActive")}
-                            >
-                              Visitor Counter
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("opacActive")}
-                            >
-                              Sistem Perpustakaan
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("opacActive")}
-                            >
-                              e-DTS
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("opacActive")}
-                            >
-                              e-DDC
-                            </NavDropdown.Item>
-                          </NavDropdown>
-                        </a>
-                      </li>
-                      <li
-                        onClick={this.showLaporanDropdown}
-                        onMouseLeave={this.hideLaporanDropdown}
-                        className={this.state.laporanActive}
-                      >
-                        <a>
-                          <NavDropdown
-                            title="Laporan"
-                            id="collasible-nav-dropdown"
-                            show={this.state.laporan}
-                          >
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("laporanActive")}
-                            >
-                              <NavLink
-                                style={{ color: "black" }}
-                                to={"/laporanBulanan"}
-                              >
-                                {" "}
-                                Bulanan
-                              </NavLink>
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("laporanActive")}
-                            >
-                              <NavLink
-                                style={{ color: "black" }}
-                                to={"/laporanTriwulan"}
-                              >
-                                {" "}
-                                Triwulan
-                              </NavLink>
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("laporanActive")}
-                            >
-                              Tahunan
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("laporanActive")}
-                            >
-                              Semester
-                            </NavDropdown.Item>
-                          </NavDropdown>
-                        </a>
-                      </li>
-                      <li
-                        onClick={this.showAktivitasDropdown}
-                        onMouseLeave={this.hideAktivitasDropdown}
-                        className={this.state.aktivitasActive}
-                      >
-                        <a>
-                          <NavDropdown
-                            title="Aktivitas"
-                            id="collasible-nav-dropdown"
-                            show={this.state.aktivitas}
-                          >
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("aktivitasActive")}
-                            >
-                              Program Unggulan
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item
-                              onClick={() => this.setHover("aktivitasActive")}
-                            >
-                              Prestasi
-                            </NavDropdown.Item>
-                          </NavDropdown>
-                        </a>
-                      </li>
-                    </ul> */}
                     <this.RenderMenu />
-                    {/* {this.renderMenu} */}
                   </div>
                 </div>
               </div>
