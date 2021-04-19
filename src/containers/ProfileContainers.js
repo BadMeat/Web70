@@ -138,10 +138,7 @@ class ProfileContainers extends Component {
           <div className="stat f-container">
             <div className="f-element col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+                <img src={require("../img/organisasi.png")} alt="organisasi" />
               </p>
             </div>
           </div>
