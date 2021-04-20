@@ -1,8 +1,5 @@
 import React from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
-import 'mapbox-gl/dist/mapbox-gl.css'
-
-// -6.2415983692887105, 106.79680146908244
 
 function mapLocation() {
   const [viewport, setViewport] = React.useState({
