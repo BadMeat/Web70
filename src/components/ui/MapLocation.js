@@ -1,7 +1,7 @@
 import React from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 
-function mapLocation() {
+function MapLocation() {
   const [viewport, setViewport] = React.useState({
     latitude: -6.2415983692887105,
     longitude: 106.79680146908244,
@@ -47,4 +47,4 @@ function mapLocation() {
   );
 }
 
-export default mapLocation;
+export default MapLocation;

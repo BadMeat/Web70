@@ -2801,6 +2801,10 @@ section {
   overflow: hidden;
 }
 
+#collasible-nav-dropdown {
+  color: black;
+}
+
 #collasible-nav-dropdown::after {
   display: none;
   color: white;

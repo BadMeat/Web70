@@ -227,8 +227,11 @@ class Headers extends Component {
             <div style={{ paddingLeft: "20px", paddingBottom: "20px" }}>
               <div id="navcollpase" className={this.state.homeActive}>
                 <NavLink
-                  style={{ color: "black", fontSize: "15px" }}
-                  // className="fa fa-home"
+                  style={{
+                    color: "black",
+                    fontSize: "15px",
+                    textDecoration: "none",
+                  }}
                   to={"/"}
                   onClick={this.setMenuCollapse}
                 >
@@ -295,21 +298,23 @@ class Headers extends Component {
     return (
       <ul id="jetmenu" className={x.join(" ")}>
         <li className={this.state.homeActive}>
-          <a onClick={() => this.setHover("homeActive")}>
+          <a onClick={() => this.setHover("homeActive")} href="/#">
             <Nav.Item>
-              <Nav.Link className="fa fa-home">
-                <NavLink to={"/"}> Home</NavLink>
+              <Nav.Link id="collasible-nav-dropdown" className="fa fa-home">
+                <NavLink id="collasible-nav-dropdown" to={"/"}>
+                  {" "}
+                  Home
+                </NavLink>
               </Nav.Link>
             </Nav.Item>
           </a>
         </li>
         <li
-          // onClick={this.showLayananDropdown}
           onMouseEnter={this.showLayananDropdown}
           onMouseLeave={this.hideLayananDropdown}
           className={this.state.layananActive}
         >
-          <a>
+          <a href="/#">
             <NavDropdown
               title="Layanan"
               id="collasible-nav-dropdown"
@@ -369,7 +374,7 @@ class Headers extends Component {
           onMouseLeave={this.hideProfilDropdown}
           className={this.state.profilActive}
         >
-          <a>
+          <a href="/#">
             <NavDropdown
               title="Profil"
               id="collasible-nav-dropdown"
@@ -396,7 +401,7 @@ class Headers extends Component {
           onMouseLeave={this.hideOpacDropdown}
           className={this.state.opacActive}
         >
-          <a>
+          <a href="/#">
             <NavDropdown
               title="O P A C"
               id="collasible-nav-dropdown"
@@ -404,9 +409,11 @@ class Headers extends Component {
             >
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
                 <a
+                  href="/#"
                   onClick={() =>
                     window.open("http://localhost/lib70/?p=visitor", "_blank")
                   }
+                  style={navLinkStyle}
                 >
                   Visitor Counter
                 </a>
@@ -414,9 +421,11 @@ class Headers extends Component {
               <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
                 <a
+                  href="/#"
                   onClick={() =>
                     window.open("http://localhost/lib70/", "_blank")
                   }
+                  style={navLinkStyle}
                 >
                   Sistem PERPUSTAKAAN
                 </a>
@@ -437,7 +446,7 @@ class Headers extends Component {
           onMouseLeave={this.hideLaporanDropdown}
           className={this.state.laporanActive}
         >
-          <a>
+          <a href="/#">
             <NavDropdown
               title="Laporan"
               id="collasible-nav-dropdown"
@@ -476,7 +485,7 @@ class Headers extends Component {
           onMouseLeave={this.hideAktivitasDropdown}
           className={this.state.aktivitasActive}
         >
-          <a>
+          <a href="/#">
             <NavDropdown
               title="Aktivitas"
               id="collasible-nav-dropdown"
@@ -562,7 +571,7 @@ class Headers extends Component {
                 </a>
                 |
                 <a
-                  // href="/"
+                  href="/#"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Notifikasi"
@@ -570,7 +579,7 @@ class Headers extends Component {
                   <i className="fa fa-bell"></i>
                 </a>
                 <a
-                  // href="index.html"
+                  href="/#"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Signout"
@@ -591,7 +600,7 @@ class Headers extends Component {
                   onClick={() => this.setHover("homeActive")}
                 >
                   <h4>
-                    <NavLink to={"/"}>
+                    <NavLink style={{ color: "black" }} to={"/"}>
                       PERPUSTAKAAN <span>SMAN 70</span>
                     </NavLink>
                   </h4>

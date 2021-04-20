@@ -25,7 +25,11 @@ const menuItemOpac = (props) => {
           <NavLink style={{ color: "black" }} to={"/opac"}>
             <div style={{ height: "10px" }} />
             <a
-              onClick={() => window.open("http://localhost/lib70/", "_blank")}
+              id="collasible-nav-dropdown"
+              href="/#"
+              onClick={() =>
+                window.open("http://localhost/lib70/?p=visitor", "_blank")
+              }
             >
               Visitor Counter
             </a>
@@ -39,7 +43,9 @@ const menuItemOpac = (props) => {
           <NavLink style={{ color: "black" }} to={"/opac"}>
             <div style={{ height: "10px" }} />
             <a
-              onClick={() => window.open("http://localhost/lib70/?p=visitor", "_blank")}
+              id="collasible-nav-dropdown"
+              href="/#"
+              onClick={() => window.open("http://localhost/lib70/", "_blank")}
             >
               Sistem PERPUSTAKAAN
             </a>
