@@ -63,20 +63,21 @@ const footers = (props) => {
           <h4 className="title">Hubungi Kami</h4>
           <ul className="contact_details">
             <li>
-              <i className="fa fa-envelope-o"></i> info@perpustakaansman70.com
+              <p style={{ marginBottom: 1 }}>
+                <i className="fa fa-envelope-o"></i> info@perpustakaansman70.com
+              </p>
             </li>
             <li>
-              <i className="fa fa-phone-square"></i> +21 1234 5678
+              <p style={{ marginBottom: 1 }}>
+                <i className="fa fa-phone-square"></i> +21 1234 5678
+              </p>
             </li>
             <li>
-              <i className="fa fa-home"></i> Jl. Bulungan Blk. C No.1,
-              RT.11/RW.7, Kramat Pela, Kec. Kby. Baru, Kota Jakarta Selatan,
-              Daerah Khusus Ibukota Jakarta 12130
-            </li>
-            <li>
-              <a href="/">
-                <i className="fa fa-map-marker"></i> View large map
-              </a>
+              <p>
+                <i className="fa fa-home"></i> Jl. Bulungan Blk. C No.1,
+                RT.11/RW.7, Kramat Pela, Kec. Kby. Baru, Kota Jakarta Selatan,
+                Daerah Khusus Ibukota Jakarta 12130
+              </p>
             </li>
           </ul>
         </div>

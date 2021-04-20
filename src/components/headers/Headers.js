@@ -148,7 +148,6 @@ class Headers extends Component {
     this.setState({
       isOpen: false,
     });
-    console.log("is open target", this.state.isOpen);
   };
 
   showSettings(event) {
@@ -512,7 +511,9 @@ class Headers extends Component {
             <div className="col-lg-12 text-right">
               <div className="social_buttons">
                 <a
-                  // href="/"
+                  href="https://web.facebook.com/libseventy/?_rdc=1&_rdr"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Facebook"
@@ -520,7 +521,9 @@ class Headers extends Component {
                   <i className="fa fa-facebook"></i>
                 </a>
                 <a
-                  // href="/"
+                  href="https://www.instagram.com/libseventy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Instagram"
@@ -528,7 +531,9 @@ class Headers extends Component {
                   <i className="fa fa-instagram"></i>
                 </a>
                 <a
-                  // href="/"
+                  href="https://twitter.com/libseventy"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Twitter"
@@ -536,7 +541,9 @@ class Headers extends Component {
                   <i className="fa fa-twitter"></i>
                 </a>
                 <a
-                  // href="/"
+                  href="https://www.youtube.com/channel/UCevAbguNQoxuQwnLRiHblTA"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="Youtube"
@@ -544,7 +551,9 @@ class Headers extends Component {
                   <i className="fa fa-youtube"></i>
                 </a>
                 <a
-                  // href="/"
+                  href="https://www.linkedin.com/in/lib-seventy-6772771b1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   data-toggle="tooltip"
                   data-placement="bottom"
                   title="LinkedIn"

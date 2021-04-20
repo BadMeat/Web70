@@ -2882,3 +2882,7 @@ section {
 .menu-item:hover {
   background-color: transparent;
 }
+
+#maplocation {
+  height: 500px;
+}

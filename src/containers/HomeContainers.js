@@ -120,10 +120,7 @@ class HomeContainers extends Component {
           <div className="portfolio-wrapper">
             <div id="owl-demo" className="owl-carousel">
               <div className="item">
-                <a
-                  data-rel="prettyPhoto"
-                  href={require("../img/portfolio_01.jpg")}
-                >
+                <a data-rel="prettyPhoto">
                   <img
                     className="lazyOwl"
                     src={require("../img/portfolio_01.jpg")}
@@ -137,10 +134,7 @@ class HomeContainers extends Component {
                 </a>
               </div>
               <div className="item">
-                <a
-                  data-rel="prettyPhoto"
-                  href={require("../img/portfolio_02.jpg")}
-                >
+                <a data-rel="prettyPhoto">
                   <img
                     className="lazyOwl"
                     src={require("../img/portfolio_02.jpg")}
@@ -154,7 +148,7 @@ class HomeContainers extends Component {
                 </a>
               </div>
               <div className="item">
-                <a href="single-portfolio-1.html">
+                <a>
                   <img
                     className="lazyOwl"
                     src={require("../img/portfolio_07.jpg")}
@@ -168,7 +162,7 @@ class HomeContainers extends Component {
                 </a>
               </div>
               <div className="item">
-                <a href="single-portfolio-1.html">
+                <a>
                   <img
                     className="lazyOwl"
                     src={require("../img/portfolio_05.jpg")}
@@ -182,7 +176,7 @@ class HomeContainers extends Component {
                 </a>
               </div>
               <div className="item">
-                <a data-rel="prettyPhoto" href="../img/portfolio_09.jpg">
+                <a data-rel="prettyPhoto">
                   <img
                     className="lazyOwl"
                     src={require("../img/portfolio_09.jpg")}
@@ -196,7 +190,7 @@ class HomeContainers extends Component {
                 </a>
               </div>
               <div className="item">
-                <a data-rel="prettyPhoto" href="../img/portfolio_10.jpg">
+                <a data-rel="prettyPhoto">
                   <img
                     className="lazyOwl"
                     src={require("../img/portfolio_10.jpg")}
@@ -210,7 +204,7 @@ class HomeContainers extends Component {
                 </a>
               </div>
               <div className="item">
-                <a data-rel="prettyPhoto" href="../img/portfolio_06.jpg">
+                <a data-rel="prettyPhoto">
                   <img
                     className="lazyOwl"
                     src={require("../img/portfolio_06.jpg")}

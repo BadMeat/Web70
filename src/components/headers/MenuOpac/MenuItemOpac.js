@@ -25,7 +25,7 @@ const menuItemOpac = (props) => {
           <NavLink style={{ color: "black" }} to={"/opac"}>
             <div style={{ height: "10px" }} />
             <a
-              onClick={() => window.open("http://localhost/lib70/?p=visitor", "_blank")}
+              onClick={() => window.open("http://localhost/lib70/", "_blank")}
             >
               Visitor Counter
             </a>

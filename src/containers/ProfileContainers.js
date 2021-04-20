@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import MapLocation from "../components/ui/MapLocation";
 
 class ProfileContainers extends Component {
   componentDidMount() {
@@ -180,7 +181,9 @@ class ProfileContainers extends Component {
             </div>
             <div className="col-lg-8 col-md-8 col-sm-6 col-xs-12">
               <div className="skills">
-                <p>map</p>
+                <div id="maplocation">
+                  <MapLocation />
+                </div>
               </div>
             </div>
           </div>
