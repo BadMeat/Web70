@@ -17,7 +17,12 @@ class ProfileContainers extends Component {
             <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
               <ul className="breadcrumb">
                 <li>
-                  <a href="home.html">Home</a>
+                  <a
+                    href="\#"
+                    onClick={() => this.props.history.push("/")}
+                  >
+                    Home
+                  </a>
                 </li>
                 <li>Profil</li>
               </ul>

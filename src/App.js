@@ -12,11 +12,17 @@ import "./css/colors/blue.css";
 import HomeContainers from "./containers/HomeContainers";
 import Layout from "./components/layout/Layout";
 import ProfileContainers from "./containers/ProfileContainers";
-import LayananContainers from "./containers/LayananContainers";
+// import LayananContainers from "./containers/LayananContainers";
 import LaporanBulananContainers from "./containers/LaporanBulananContainers";
 import LaporanTriwulanContainers from "./containers/LaporanTriwulanContainers";
 import LaporanSemesterContainer from "./containers/LaporanSemesterContainer";
 import LaporanSaran from "./containers/LaporanSaran";
+import Sirkulasi from "./containers/layanan/SirukulasiContainer";
+import ReferensiContainer from "./containers/layanan/ReferensiContainer";
+import BimbinganContainer from "./containers/layanan/BimbinganContainer";
+import KeanggotaanContainer from "./containers/layanan/KeanggotaanContainer";
+import KerjasamaContainer from "./containers/layanan/KerjasamaContainer";
+import AnakContainer from "./containers/layanan/AnakContainer";
 
 class App extends Component {
   state = {
@@ -36,10 +42,18 @@ class App extends Component {
           <Route path="/" exact component={HomeContainers} />
           <Route path="/profile" component={ProfileContainers} />
           {/* <Route path="/layanan" component={LayananContainers} /> */}
-          <Route
+          {/* Layanan */}
+          {/* <Route
             path="/layanan"
             render={() => <LayananContainers layanan={this.state.layanan} />}
-          />
+          /> */}
+          <Route path="/layanan" component={AnakContainer} />
+          <Route path="/layananSirkulasi" component={Sirkulasi} />
+          <Route path="/layananReferensi" component={ReferensiContainer} />
+          <Route path="/layananBimbingan" component={BimbinganContainer} />
+          <Route path="/layananKeanggotaan" component={KeanggotaanContainer} />
+          <Route path="/layananKerjasama" component={KerjasamaContainer} />
+          {/* Laporan */}
           <Route path="/laporanBulanan" component={LaporanBulananContainers} />
           <Route
             path="/laporanTriwulan"

@@ -11,89 +11,89 @@ class LayananContainers extends Component {
   }
 
   scrollToBottom = () => {
-    const { index, selected } = this.props;
-    if (index === selected) {
-      setTimeout(() => {
-        this.messagesEnd.scrollIntoView({ behavior: "smooth" });
-      }, 0);
-    }
+    // const { index, selected } = this.props;
+    // if (index === selected) {
+    //   setTimeout(() => {
+    //     this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+    //   }, 0);
+    // }
   };
 
   scrollToSirkulasi = () => {
-    const { index, selected } = this.props;
-    if (index === selected) {
-      setTimeout(() => {
-        this.sirkulasi.scrollIntoView({ behavior: "smooth" });
-      }, 0);
-    }
+    // const { index, selected } = this.props;
+    // if (index === selected) {
+    //   setTimeout(() => {
+    //     this.sirkulasi.scrollIntoView({ behavior: "smooth" });
+    //   }, 0);
+    // }
   };
 
   scrollToReferensi = () => {
-    const { index, selected } = this.props;
-    if (index === selected) {
-      setTimeout(() => {
-        this.referensi.scrollIntoView({ behavior: "smooth" });
-      }, 0);
-    }
+    // const { index, selected } = this.props;
+    // if (index === selected) {
+    //   setTimeout(() => {
+    //     this.referensi.scrollIntoView({ behavior: "smooth" });
+    //   }, 0);
+    // }
   };
 
   scrollToBimbingan = () => {
-    const { index, selected } = this.props;
-    if (index === selected) {
-      setTimeout(() => {
-        this.bimbingan.scrollIntoView({ behavior: "smooth" });
-      }, 0);
-    }
+    // const { index, selected } = this.props;
+    // if (index === selected) {
+    //   setTimeout(() => {
+    //     this.bimbingan.scrollIntoView({ behavior: "smooth" });
+    //   }, 0);
+    // }
   };
 
   scrollToKeanggotaan = () => {
-    const { index, selected } = this.props;
-    if (index === selected) {
-      setTimeout(() => {
-        this.keanggotaan.scrollIntoView({ behavior: "smooth" });
-      }, 0);
-    }
+    // const { index, selected } = this.props;
+    // if (index === selected) {
+    //   setTimeout(() => {
+    //     this.keanggotaan.scrollIntoView({ behavior: "smooth" });
+    //   }, 0);
+    // }
   };
 
   scrollToKerjasama = () => {
-    const { index, selected } = this.props;
-    if (index === selected) {
-      setTimeout(() => {
-        this.kerjasama.scrollIntoView({ behavior: "smooth" });
-      }, 0);
-    }
+    // const { index, selected } = this.props;
+    // if (index === selected) {
+    //   setTimeout(() => {
+    //     this.kerjasama.scrollIntoView({ behavior: "smooth" });
+    //   }, 0);
+    // }
   };
 
   componentDidMount() {
-    if (this.props.layanan === "sirkulasi") {
-      this.scrollToSirkulasi();
-    } else if (this.props.layanan === "referensi") {
-      this.scrollToReferensi();
-    } else if (this.props.layanan === "bimbingan") {
-      this.scrollToBimbingan();
-    } else if (this.props.layanan === "keanggotaan") {
-      this.scrollToKeanggotaan();
-    } else if (this.props.layanan === "kerjasama") {
-      this.scrollToKerjasama();
-    } else {
-      this.scrollToBottom();
-    }
+    // if (this.props.layanan === "sirkulasi") {
+    //   this.scrollToSirkulasi();
+    // } else if (this.props.layanan === "referensi") {
+    //   this.scrollToReferensi();
+    // } else if (this.props.layanan === "bimbingan") {
+    //   this.scrollToBimbingan();
+    // } else if (this.props.layanan === "keanggotaan") {
+    //   this.scrollToKeanggotaan();
+    // } else if (this.props.layanan === "kerjasama") {
+    //   this.scrollToKerjasama();
+    // } else {
+    //   this.scrollToBottom();
+    // }
   }
 
   componentDidUpdate() {
-    if (this.props.layanan === "sirkulasi") {
-      this.scrollToSirkulasi();
-    } else if (this.props.layanan === "referensi") {
-      this.scrollToReferensi();
-    } else if (this.props.layanan === "bimbingan") {
-      this.scrollToBimbingan();
-    } else if (this.props.layanan === "keanggotaan") {
-      this.scrollToKeanggotaan();
-    } else if (this.props.layanan === "kerjasama") {
-      this.scrollToKerjasama();
-    } else {
-      this.scrollToBottom();
-    }
+    // if (this.props.layanan === "sirkulasi") {
+    //   this.scrollToSirkulasi();
+    // } else if (this.props.layanan === "referensi") {
+    //   this.scrollToReferensi();
+    // } else if (this.props.layanan === "bimbingan") {
+    //   this.scrollToBimbingan();
+    // } else if (this.props.layanan === "keanggotaan") {
+    //   this.scrollToKeanggotaan();
+    // } else if (this.props.layanan === "kerjasama") {
+    //   this.scrollToKerjasama();
+    // } else {
+    //   this.scrollToBottom();
+    // }
   }
 
   render() {
@@ -104,7 +104,7 @@ class LayananContainers extends Component {
             <div>
               <ul className="breadcrumb">
                 <li>
-                  <a href="index.html">Home</a>
+                  <a href="\#">Home</a>
                 </li>
                 <li>Layanan</li>
               </ul>

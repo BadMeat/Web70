@@ -72,74 +72,16 @@ class Headers extends Component {
     this.handleLinkClick();
   };
 
-  showLayananDropdown = (e) => {
+  showDropDown = (property) => {
     this.setState({
-      layanan: !this.state.layanan,
+      [property]: !this.state[property],
     });
   };
 
-  hideLayananDropdown = (e) => {
+  hideDropDown = (property) => {
     this.setState({
-      layanan: false,
+      [property]: false,
     });
-  };
-
-  showProfilDropdown = () => {
-    this.setState({
-      profil: !this.state.profil,
-    });
-  };
-
-  hideProfilDropdown = () => {
-    this.setState({
-      profil: false,
-    });
-  };
-
-  showOpacDropdown = (e) => {
-    this.setState({
-      opac: !this.state.opac,
-    });
-  };
-
-  hideOpacDropdown = (e) => {
-    this.setState({
-      opac: false,
-    });
-  };
-
-  showLaporanDropdown = (e) => {
-    this.setState({
-      laporan: !this.state.laporan,
-    });
-  };
-
-  hideLaporanDropdown = (e) => {
-    this.setState({
-      laporan: false,
-    });
-  };
-
-  showAktivitasDropdown = (e) => {
-    this.setState({
-      aktivitas: !this.state.aktivitas,
-    });
-  };
-
-  hideAktivitasDropdown = (e) => {
-    this.setState({
-      aktivitas: false,
-    });
-  };
-
-  navToSirkulasi = () => {
-    this.setHover("layananActive");
-    this.props.setLayanan("sirkulasi");
-  };
-
-  navToAnak = () => {
-    this.setHover("layananActive");
-    this.props.setLayanan("anak");
   };
 
   navToScroolBot = (type) => {
@@ -149,10 +91,6 @@ class Headers extends Component {
       isOpen: false,
     });
   };
-
-  showSettings(event) {
-    event.preventDefault();
-  }
 
   handleScroll = () => {
     const offset = window.scrollY;
@@ -310,8 +248,8 @@ class Headers extends Component {
           </a>
         </li>
         <li
-          onMouseEnter={this.showLayananDropdown}
-          onMouseLeave={this.hideLayananDropdown}
+          onMouseEnter={() => this.showDropDown("layanan")}
+          onMouseLeave={() => this.hideDropDown("layanan")}
           className={this.state.layananActive}
         >
           <a href="/#">
@@ -329,7 +267,7 @@ class Headers extends Component {
               <NavDropdown.Item
                 onClick={() => this.navToScroolBot("sirkulasi")}
               >
-                <NavLink style={navLinkStyle} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layananSirkulasi"}>
                   Layanan Sirkulasi
                 </NavLink>
               </NavDropdown.Item>
@@ -337,7 +275,7 @@ class Headers extends Component {
               <NavDropdown.Item
                 onClick={() => this.navToScroolBot("referensi")}
               >
-                <NavLink style={navLinkStyle} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layananReferensi"}>
                   Layanan Referensi
                 </NavLink>
               </NavDropdown.Item>
@@ -345,7 +283,7 @@ class Headers extends Component {
               <NavDropdown.Item
                 onClick={() => this.navToScroolBot("bimbingan")}
               >
-                <NavLink style={navLinkStyle} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layananBimbingan"}>
                   Layanan Bimbingan Pemustaka
                 </NavLink>
               </NavDropdown.Item>
@@ -353,7 +291,7 @@ class Headers extends Component {
               <NavDropdown.Item
                 onClick={() => this.navToScroolBot("keanggotaan")}
               >
-                <NavLink style={navLinkStyle} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layananKeanggotaan"}>
                   Layanan Keanggotaan
                 </NavLink>
               </NavDropdown.Item>
@@ -361,7 +299,7 @@ class Headers extends Component {
               <NavDropdown.Item
                 onClick={() => this.navToScroolBot("kerjasama")}
               >
-                <NavLink style={navLinkStyle} to={"/layanan"}>
+                <NavLink style={navLinkStyle} to={"/layananKerjasama"}>
                   Layanan Kerjasama
                 </NavLink>
               </NavDropdown.Item>
@@ -369,9 +307,8 @@ class Headers extends Component {
           </a>
         </li>
         <li
-          onMouseEnter={this.showProfilDropdown}
-          // onTouchStart={this.showProfilDropdown}
-          onMouseLeave={this.hideProfilDropdown}
+          onMouseEnter={() => this.showDropDown("profil")}
+          onMouseLeave={() => this.hideDropDown("profil")}
           className={this.state.profilActive}
         >
           <a href="/#">
@@ -397,8 +334,8 @@ class Headers extends Component {
           </a>
         </li>
         <li
-          onMouseEnter={this.showOpacDropdown}
-          onMouseLeave={this.hideOpacDropdown}
+          onMouseEnter={() => this.showDropDown("opac")}
+          onMouseLeave={() => this.hideDropDown("opac")}
           className={this.state.opacActive}
         >
           <a href="/#">
@@ -442,8 +379,8 @@ class Headers extends Component {
           </a>
         </li>
         <li
-          onMouseEnter={this.showLaporanDropdown}
-          onMouseLeave={this.hideLaporanDropdown}
+          onMouseEnter={() => this.showDropDown("laporan")}
+          onMouseLeave={() => this.hideDropDown("laporan")}
           className={this.state.laporanActive}
         >
           <a href="/#">
@@ -481,8 +418,8 @@ class Headers extends Component {
           </a>
         </li>
         <li
-          onMouseEnter={this.showAktivitasDropdown}
-          onMouseLeave={this.hideAktivitasDropdown}
+          onMouseEnter={() => this.showDropDown("aktivitas")}
+          onMouseLeave={() => this.hideDropDown("aktivitas")}
           className={this.state.aktivitasActive}
         >
           <a href="/#">
