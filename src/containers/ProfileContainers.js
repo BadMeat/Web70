@@ -182,11 +182,7 @@ class ProfileContainers extends Component {
             <div className="col-lg-8 col-md-8 col-sm-6 col-xs-12">
               <div className="skills">
                 <div id="maplocation">
-                  <MapLocation
-                    mapboxApiAccessToken={
-                      process.env.REACT_APP_MAPBOX_ACCESS_TOKEN
-                    }
-                  />
+                  <MapLocation />
                 </div>
               </div>
             </div>
