@@ -1,7 +1,7 @@
 import React from "react";
 import ReactMapGL, { Marker } from "react-map-gl";
 
-function MapLocation() {
+function MapLocation(props) {
   const [viewport, setViewport] = React.useState({
     latitude: -6.2415983692887105,
     longitude: 106.79680146908244,
@@ -14,6 +14,7 @@ function MapLocation() {
       width="100%"
       height="100%"
       onViewportChange={(viewport) => setViewport(viewport)}
+      mapboxApiAccessToken={props.mapboxApiAccessToken}
     >
       <Marker
         latitude={-6.241438390686289}
