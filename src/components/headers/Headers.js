@@ -536,8 +536,8 @@ class Headers extends Component {
                 >
                   <i className="fa fa-linkedin"></i>
                 </a>
-                |
-                <a
+                {/* | */}
+                {/* <a
                   href="/#"
                   data-toggle="tooltip"
                   data-placement="bottom"
@@ -552,7 +552,7 @@ class Headers extends Component {
                   title="Signout"
                 >
                   <i className="fa fa-sign-out"></i>
-                </a>
+                </a> */}
               </div>
             </div>
           </div>

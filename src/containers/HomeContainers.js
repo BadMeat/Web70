@@ -60,7 +60,7 @@ class HomeContainers extends Component {
                     <hr />
                   </div>
                   <p>
-                    Kumpulan kegiatan yang Inovasi dan kreatif yang yang
+                    Kumpulan kegiatan yang Inovasi dan kreatif yang
                     dikelola oleh Perpustakaan SMAN 70 Jakarta
                   </p>
                 </div>
