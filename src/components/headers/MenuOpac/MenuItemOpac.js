@@ -63,9 +63,24 @@ const menuItemOpac = (props) => {
             >
               <div style={{ height: "10px" }} />
               E-DCC
-              <div style={{ height: "10px" }} />
             </NavLink>
           </div>
+          <NavLink style={{ color: "black" }} to={"/opac"}>
+            <div style={{ height: "10px" }} />
+            <a
+              id="collasible-nav-dropdown"
+              href="/#"
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/e/1FAIpQLSdU3ZoGW9g_KgYty8xmJgsRq0CTxVQl2AHQQd4MyDFjIG69sw/viewform",
+                  "_blank"
+                )
+              }
+            >
+              Survey Kepuasan Pemustaka
+              <div style={{ height: "10px" }} />
+            </a>
+          </NavLink>
         </div>
       </Collapse>
       {/* End Sub Menu Layanan */}
