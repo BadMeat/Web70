@@ -9,6 +9,7 @@ import MenuItemProfil from "./MenuProfil/MenuItemProfil";
 import MenuItemOpac from "./MenuOpac/MenuItemOpac";
 import MenuItemLaporan from "./MenuLaporan/MenuItemLaporan";
 import MenuItemAktifitas from "./MenuAktifitas/MenuAktifitas";
+import IpAddressModal from "../modals/IpAddressModal";
 
 const navLinkStyle = {
   color: "black",
@@ -30,6 +31,7 @@ class Headers extends Component {
     aktivitasActive: "inactive",
     isOpen: false,
     menuOpen: false,
+    ipAddressIsOpen: false,
   };
 
   constructor(props) {
@@ -350,6 +352,9 @@ class Headers extends Component {
                   onClick={() =>
                     window.open("http://localhost/lib70/?p=visitor", "_blank")
                   }
+                  // onClick={() => {
+                  //   this.modalIsClick(true);
+                  // }}
                   style={navLinkStyle}
                 >
                   Visitor Counter
@@ -375,6 +380,20 @@ class Headers extends Component {
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
                 e-DDC
               </NavDropdown.Item>
+              <NavDropdown.Item onClick={() => this.setHover("laporanActive")}>
+                <a
+                  href="/#"
+                  onClick={() =>
+                    window.open(
+                      "https://docs.google.com/forms/d/e/1FAIpQLSdU3ZoGW9g_KgYty8xmJgsRq0CTxVQl2AHQQd4MyDFjIG69sw/viewform",
+                      "_blank"
+                    )
+                  }
+                  style={navLinkStyle}
+                >
+                  Survey Kepuasan Pemustaka
+                </a>
+              </NavDropdown.Item>
             </NavDropdown>
           </a>
         </li>
@@ -391,7 +410,6 @@ class Headers extends Component {
             >
               <NavDropdown.Item onClick={() => this.setHover("laporanActive")}>
                 <NavLink style={navLinkStyle} to={"/laporanBulanan"}>
-                  {" "}
                   Bulanan
                 </NavLink>
               </NavDropdown.Item>
@@ -431,7 +449,7 @@ class Headers extends Component {
               <NavDropdown.Item
                 onClick={() => this.setHover("aktivitasActive")}
               >
-                <NavLink style={navLinkStyle} to={"/programUnggulan"}>
+                <NavLink style={navLinkStyle} to={"/aktivitasProgram"}>
                   Program Unggulan
                 </NavLink>
               </NavDropdown.Item>
@@ -439,7 +457,9 @@ class Headers extends Component {
               <NavDropdown.Item
                 onClick={() => this.setHover("aktivitasActive")}
               >
-                Prestasi
+                <NavLink style={navLinkStyle} to={"/aktivitasPrestasi"}>
+                  Prestasi
+                </NavLink>
               </NavDropdown.Item>
             </NavDropdown>
           </a>
@@ -448,10 +468,20 @@ class Headers extends Component {
     );
   };
 
+  modalIsClick = (bool) => {
+    this.setState({
+      ipAddressIsOpen: bool,
+    });
+  };
+
   render() {
     return (
       <div>
         {/* <body> */}
+        <IpAddressModal
+          show={this.state.ipAddressIsOpen}
+          onHide={() => this.modalIsClick(false)}
+        />
         <div className="topbar clearfix">
           <div className="container">
             <div className="col-lg-12 text-right">

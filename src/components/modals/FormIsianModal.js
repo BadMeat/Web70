@@ -87,7 +87,6 @@ class FormIsianModal extends Component {
 
     return (
       <Modal
-        // style={{ opacity: 1 }}
         animation={false}
         show={this.props.show}
         onHide={this.props.onHide}

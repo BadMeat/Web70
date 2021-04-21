@@ -16,13 +16,17 @@ import ProfileContainers from "./containers/ProfileContainers";
 import LaporanBulananContainers from "./containers/LaporanBulananContainers";
 import LaporanTriwulanContainers from "./containers/LaporanTriwulanContainers";
 import LaporanSemesterContainer from "./containers/LaporanSemesterContainer";
-import LaporanSaran from "./containers/LaporanSaran";
+// import LaporanSaran from "./containers/LaporanSaran";
 import Sirkulasi from "./containers/layanan/SirukulasiContainer";
 import ReferensiContainer from "./containers/layanan/ReferensiContainer";
 import BimbinganContainer from "./containers/layanan/BimbinganContainer";
 import KeanggotaanContainer from "./containers/layanan/KeanggotaanContainer";
 import KerjasamaContainer from "./containers/layanan/KerjasamaContainer";
 import AnakContainer from "./containers/layanan/AnakContainer";
+import LaporanTahunan from "./containers/laporan/LaporanTahunan";
+import ProgramUnggulanContainer from "./containers/aktivitas/ProgramUnggulanContainer";
+import PrestasiContainer from "./containers/aktivitas/PrestasiContainer";
+// import LoginContainer from "./containers/LoginContainers";
 
 class App extends Component {
   state = {
@@ -55,12 +59,17 @@ class App extends Component {
           <Route path="/layananKerjasama" component={KerjasamaContainer} />
           {/* Laporan */}
           <Route path="/laporanBulanan" component={LaporanBulananContainers} />
+          <Route path="/laporanTahunan" component={LaporanTahunan} />
           <Route
             path="/laporanTriwulan"
             component={LaporanTriwulanContainers}
           />
           <Route path="/laporanSemester" component={LaporanSemesterContainer} />
-          <Route path="/laporanSaran" component={LaporanSaran} />
+          {/* <Route path="/laporanSaran" component={LaporanSaran} /> */}
+          {/* <Route path="/opacSurvey" component={LoginContainer} /> */}
+          {/* Aktivitas */}
+          <Route path="/aktivitasProgram" component={ProgramUnggulanContainer} />
+          <Route path="/aktivitasPrestasi" component={PrestasiContainer} />
         </Switch>
       </Layout>
     );

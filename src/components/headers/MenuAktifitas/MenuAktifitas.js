@@ -16,12 +16,12 @@ const menuAktivitas = (props) => {
         <div style={{ paddingLeft: "40px" }}>
           <SubMenuMobile
             setMenuCollapse={props.setMenuCollapse}
-            to={"/laporanSaran"}
+            to={"/aktivitasProgram"}
             title="PROGRAM UNGGULAN"
           />
           <SubMenuMobile
             setMenuCollapse={props.setMenuCollapse}
-            to={"/aktivitas"}
+            to={"/aktivitasPrestasi"}
             title="PRESTASI"
           />
         </div>

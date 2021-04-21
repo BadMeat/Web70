@@ -27,6 +27,7 @@ class KeanggotaanContainer extends Component {
                   memudahkan proses layanan pengguna perpustakaan.
                 </p>
                 <p>Prosedur layanan ini meliputi:</p>
+                <div style={{ marginBottom: 25 }} />
                 <p>
                   <img
                     className="img-responsive "
