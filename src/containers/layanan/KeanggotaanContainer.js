@@ -1,22 +1,19 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import RouteHome from "../../components/headers/RouteHome/RouteHome";
+import ImageFadeIn from "../../components/ui/ImageFadeIn";
 import Auxiliary from "../../hoc/Auxiliary";
+import { setMenuActive } from "../../store/actions";
+
 class KeanggotaanContainer extends Component {
+  componentDidMount() {
+    this.props.setMenuActive("layananActive");
+  }
+
   render() {
     return (
       <Auxiliary>
-        <section className="post-wrapper-top">
-          <div className="container">
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <ul className="breadcrumb">
-                <li>
-                  <a href="index.html">Home</a>
-                </li>
-                <li>Layanan Anggota</li>
-              </ul>
-              <h2>LAYANAN ANGGOTA</h2>
-            </div>
-          </div>
-        </section>
+        <RouteHome title="Layanan Anggota" goToHome={this.props.history} />
 
         <section className="section1">
           <div className="container ">
@@ -29,11 +26,13 @@ class KeanggotaanContainer extends Component {
                 <p>Prosedur layanan ini meliputi:</p>
                 <div style={{ marginBottom: 25 }} />
                 <p>
-                  <img
-                    className="img-responsive "
-                    src={require("../../img/img-anggota.JPG")}
-                    alt=""
-                  />
+                  <ImageFadeIn>
+                    <img
+                      className="img-responsive "
+                      src={require("../../img/img-anggota.JPG")}
+                      alt=""
+                    />
+                  </ImageFadeIn>
                 </p>
               </div>
             </div>
@@ -43,4 +42,11 @@ class KeanggotaanContainer extends Component {
     );
   }
 }
-export default KeanggotaanContainer;
+const mapStateToProps = (state) => {
+  const { menu } = state.menu;
+  return { menu };
+};
+
+export default connect(mapStateToProps, { setMenuActive })(
+  KeanggotaanContainer
+);

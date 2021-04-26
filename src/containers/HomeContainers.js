@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import FormIsianModal from "../components/modals/FormIsianModal";
 import "../lib/bootstrap/css/bootstrap.min.css";
 import "../lib/owl-carousel/owl-carousel.css";
+import { connect } from "react-redux";
+import { setMenuActive } from "../store/actions";
+import ImageFadeIn from "../components/ui/ImageFadeIn";
 
 class HomeContainers extends Component {
   state = {
@@ -10,6 +13,7 @@ class HomeContainers extends Component {
 
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.props.setMenuActive("homeActive");
   }
 
   componentDidUpdate() {
@@ -51,8 +55,9 @@ class HomeContainers extends Component {
                 <div className="service-icon">
                   <div className="dm-icon-effect-1" data-effect="slide-left">
                     <a href="/" className="">
-                      {" "}
-                      <i className="active dm-icon fa fa-bars fa-3x"></i>{" "}
+                      <ImageFadeIn>
+                        <i className="active dm-icon fa fa-bars fa-3x"></i>{" "}
+                      </ImageFadeIn>
                     </a>
                   </div>
                   <div className="servicetitle">
@@ -60,8 +65,8 @@ class HomeContainers extends Component {
                     <hr />
                   </div>
                   <p>
-                    Kumpulan kegiatan yang Inovasi dan kreatif yang
-                    dikelola oleh Perpustakaan SMAN 70 Jakarta
+                    Kumpulan kegiatan yang Inovasi dan kreatif yang dikelola
+                    oleh Perpustakaan SMAN 70 Jakarta
                   </p>
                 </div>
               </div>
@@ -71,9 +76,11 @@ class HomeContainers extends Component {
               <div className="servicebox text-center">
                 <div className="service-icon">
                   <div className="dm-icon-effect-1" data-effect="slide-bottom">
-                    <a href="/" className="">
+                    <a href="/">
                       {" "}
-                      <i className="active dm-icon fa fa-laptop fa-3x"></i>{" "}
+                      <ImageFadeIn>
+                        <i className="active dm-icon fa fa-laptop fa-3x"></i>{" "}
+                      </ImageFadeIn>
                     </a>
                   </div>
                   <div className="servicetitle">
@@ -93,8 +100,9 @@ class HomeContainers extends Component {
                 <div className="service-icon">
                   <div className="dm-icon-effect-1" data-effect="slide-right">
                     <a href="/" className="">
-                      {" "}
-                      <i className="active dm-icon fa fa-book fa-3x"></i>{" "}
+                      <ImageFadeIn>
+                        <i className="active dm-icon fa fa-book fa-3x"></i>{" "}
+                      </ImageFadeIn>
                     </a>
                   </div>
                   <div className="servicetitle">
@@ -224,4 +232,10 @@ class HomeContainers extends Component {
     );
   }
 }
-export default HomeContainers;
+
+const mapStateToProps = (state) => {
+  const { menu } = state.menu;
+  return { menu };
+};
+
+export default connect(mapStateToProps, { setMenuActive })(HomeContainers);

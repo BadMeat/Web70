@@ -5,10 +5,15 @@ import triwulanPertama from "../data/Triwulan/TriwulanPertama";
 import triwulanKedua from "../data/Triwulan/TriwulanKedua";
 import triwulanKetiga from "../data/Triwulan/TriwulanKetiga";
 import triwulanKeempat from "../data/Triwulan/TriwulanKeempat";
+import RouteHome from "../components/headers/RouteHome/RouteHome";
+import { setMenuActive } from "../store/actions";
+import { connect } from "react-redux";
+import ImageFadeIn from "../components/ui/ImageFadeIn";
 
 class LaporanTriwulanContainers extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.props.setMenuActive("laporanActive");
   }
 
   componentDidUpdate() {
@@ -111,131 +116,129 @@ class LaporanTriwulanContainers extends Component {
   render() {
     return (
       <div>
-        <section className="post-wrapper-top">
-          <div className="container">
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <ul className="breadcrumb">
-                <li>
-                  <a href="home.html">Home</a>
-                </li>
-                <li>Laporan Triwulan</li>
-              </ul>
-              <h2>LAPORAN TRIWULAN</h2>
-            </div>
-          </div>
-        </section>
-        <section className="section1">
-          <div className="container clearfix">
-            <div
-              style={{
-                marginBottom: 20,
-                display: "flex",
-              }}
-            >
-              <DropdownButton
-                id="dropdown-item-button"
-                title="Triwulan"
-                onSelect={this.onSemesterSelected}
-              >
-                <Dropdown.Item eventKey="1" as="button">
-                  1
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="2" as="button">
-                  2
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="3" as="button">
-                  3
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="4" as="button">
-                  4
-                </Dropdown.Item>
-              </DropdownButton>
+        <RouteHome title="Laporan Triwulan" goToHome={this.props.history} />
+        <ImageFadeIn>
+          <section className="section1">
+            <div className="container clearfix">
               <div
                 style={{
-                  alignItems: "center",
+                  marginBottom: 20,
                   display: "flex",
-                  marginLeft: "20px",
-                  fontSize: "20px",
                 }}
               >
-                {this.state.selectedTitle}
+                <DropdownButton
+                  id="dropdown-item-button"
+                  title="Triwulan"
+                  onSelect={this.onSemesterSelected}
+                >
+                  <Dropdown.Item eventKey="1" as="button">
+                    1
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="2" as="button">
+                    2
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="3" as="button">
+                    3
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="4" as="button">
+                    4
+                  </Dropdown.Item>
+                </DropdownButton>
+                <div
+                  style={{
+                    alignItems: "center",
+                    display: "flex",
+                    marginLeft: "20px",
+                    fontSize: "20px",
+                  }}
+                >
+                  {this.state.selectedTitle}
+                </div>
               </div>
-            </div>
 
-            <div className="row">
-              <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 clearfix">
-                <h4>ANGGOTA</h4>
-                <table className="table table-striped" data-effect="fade">
-                  <thead>
-                    <tr>
-                      <th>Jenis Anggota</th>
-                      <th>Jumlah</th>
-                    </tr>
-                  </thead>
-                  <tbody>{this.renderAnggota()}</tbody>
-                </table>
+              <div className="row">
+                <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 clearfix">
+                  <h4>ANGGOTA</h4>
+                  <table className="table table-striped" data-effect="fade">
+                    <thead>
+                      <tr>
+                        <th>Jenis Anggota</th>
+                        <th>Jumlah</th>
+                      </tr>
+                    </thead>
+                    <tbody>{this.renderAnggota()}</tbody>
+                  </table>
+                </div>
               </div>
-            </div>
 
-            <div className="row">
-              <div className=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <h4>KOLEKSI</h4>
-                <table className="table table-striped" data-effect="fade">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Jenis Koleksi</th>
-                      <th>Jumlah Judul</th>
-                      <th>Jumlah Eksemplar</th>
-                    </tr>
-                  </thead>
-                  <tbody>{this.renderKoleksi()}</tbody>
-                </table>
+              <div className="row">
+                <div className=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <h4>KOLEKSI</h4>
+                  <table className="table table-striped" data-effect="fade">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Jenis Koleksi</th>
+                        <th>Jumlah Judul</th>
+                        <th>Jumlah Eksemplar</th>
+                      </tr>
+                    </thead>
+                    <tbody>{this.renderKoleksi()}</tbody>
+                  </table>
+                </div>
+                <div className=" col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
               </div>
-              <div className=" col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
-            </div>
 
-            <div className="row">
-              <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix">
-                <div className="clearfix">&nbsp;</div>
-                <h4>KUNJUNGAN {this.state.sirkulasiTitle}</h4>
-                <table className="table table-striped" data-effect="fade">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Jenis Anggota</th>
-                      <th>Jumlah Pengunjung</th>
-                    </tr>
-                  </thead>
-                  <tbody>{this.renderKunjungan()}</tbody>
-                </table>
+              <div className="row">
+                <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix">
+                  <div className="clearfix">&nbsp;</div>
+                  <h4>KUNJUNGAN {this.state.sirkulasiTitle}</h4>
+                  <table className="table table-striped" data-effect="fade">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Jenis Anggota</th>
+                        <th>Jumlah Pengunjung</th>
+                      </tr>
+                    </thead>
+                    <tbody>{this.renderKunjungan()}</tbody>
+                  </table>
+                </div>
+                <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix"></div>
               </div>
-              <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix"></div>
-            </div>
 
-            <div className="row">
-              <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix">
-                <div className="clearfix">&nbsp;</div>
-                <h4>SIRKULASI {this.state.sirkulasiTitle}</h4>
-                <table className="table table-striped" data-effect="fade">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Jenis Anggota</th>
-                      <th>Jumlah Peminjaman</th>
-                      <th>Telah Mengembalikan</th>
-                      <th>Jumlah Keterlambatan</th>
-                    </tr>
-                  </thead>
-                  <tbody>{this.renderSirkulasi()}</tbody>
-                </table>
+              <div className="row">
+                <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix">
+                  <div className="clearfix">&nbsp;</div>
+                  <h4>SIRKULASI {this.state.sirkulasiTitle}</h4>
+                  <table className="table table-striped" data-effect="fade">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Jenis Anggota</th>
+                        <th>Jumlah Peminjaman</th>
+                        <th>Telah Mengembalikan</th>
+                        <th>Jumlah Keterlambatan</th>
+                      </tr>
+                    </thead>
+                    <tbody>{this.renderSirkulasi()}</tbody>
+                  </table>
+                </div>
+                <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix"></div>
               </div>
-              <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix"></div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ImageFadeIn>
       </div>
     );
   }
 }
-export default LaporanTriwulanContainers;
+
+const mapStateToProps = (state) => {
+  const { menu } = state.menu;
+  return { menu };
+};
+
+export default connect(mapStateToProps, { setMenuActive })(
+  LaporanTriwulanContainers
+);

@@ -10,6 +10,8 @@ import MenuItemOpac from "./MenuOpac/MenuItemOpac";
 import MenuItemLaporan from "./MenuLaporan/MenuItemLaporan";
 import MenuItemAktifitas from "./MenuAktifitas/MenuAktifitas";
 import IpAddressModal from "../modals/IpAddressModal";
+import { connect } from "react-redux";
+import { setMenuActive } from "../../store/actions";
 
 const navLinkStyle = {
   color: "black",
@@ -23,12 +25,6 @@ class Headers extends Component {
     opac: false,
     laporan: false,
     aktivitas: false,
-    homeActive: "active",
-    layananActive: "inactive",
-    profilActive: "inactive",
-    opacActive: "inactive",
-    laporanActive: "inactive",
-    aktivitasActive: "inactive",
     isOpen: false,
     menuOpen: false,
     ipAddressIsOpen: false,
@@ -49,6 +45,7 @@ class Headers extends Component {
   }
 
   setHover = (property) => {
+    this.props.setMenuActive(property);
     this.setState({
       homeActive: "inactive",
       layananActive: "inactive",
@@ -237,7 +234,8 @@ class Headers extends Component {
     }
     return (
       <ul id="jetmenu" className={x.join(" ")}>
-        <li className={this.state.homeActive}>
+        {/* <li className={this.state.homeActive}> */}
+        <li className={this.props.menu.homeActive}>
           <a onClick={() => this.setHover("homeActive")} href="/#">
             <Nav.Item>
               <Nav.Link id="collasible-nav-dropdown" className="fa fa-home">
@@ -252,9 +250,10 @@ class Headers extends Component {
         <li
           onMouseEnter={() => this.showDropDown("layanan")}
           onMouseLeave={() => this.hideDropDown("layanan")}
-          className={this.state.layananActive}
+          // className={this.state.layananActive}
+          className={this.props.menu.layananActive}
         >
-          <a href="/#">
+          <a href="/layanan">
             <NavDropdown
               title="Layanan"
               id="collasible-nav-dropdown"
@@ -311,9 +310,10 @@ class Headers extends Component {
         <li
           onMouseEnter={() => this.showDropDown("profil")}
           onMouseLeave={() => this.hideDropDown("profil")}
-          className={this.state.profilActive}
+          // className={this.state.profilActive}
+          className={this.props.menu.profilActive}
         >
-          <a href="/#">
+          <a href="/profile">
             <NavDropdown
               title="Profil"
               id="collasible-nav-dropdown"
@@ -326,11 +326,15 @@ class Headers extends Component {
               </NavDropdown.Item>
               <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("profilActive")}>
-                Tujuan
+                <NavLink style={navLinkStyle} to={"/profile"}>
+                  Tujuan
+                </NavLink>
               </NavDropdown.Item>
               <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("profilActive")}>
-                Struktur Organisasi Perpustakaan
+                <NavLink style={navLinkStyle} to={"/profile"}>
+                  Struktur Organisasi Perpustakaan
+                </NavLink>
               </NavDropdown.Item>
             </NavDropdown>
           </a>
@@ -338,7 +342,8 @@ class Headers extends Component {
         <li
           onMouseEnter={() => this.showDropDown("opac")}
           onMouseLeave={() => this.hideDropDown("opac")}
-          className={this.state.opacActive}
+          // className={this.state.opacActive}
+          className={this.props.menu.opacActive}
         >
           <a href="/#">
             <NavDropdown
@@ -400,7 +405,8 @@ class Headers extends Component {
         <li
           onMouseEnter={() => this.showDropDown("laporan")}
           onMouseLeave={() => this.hideDropDown("laporan")}
-          className={this.state.laporanActive}
+          // className={this.state.laporanActive}
+          className={this.props.menu.laporanActive}
         >
           <a href="/#">
             <NavDropdown
@@ -438,9 +444,10 @@ class Headers extends Component {
         <li
           onMouseEnter={() => this.showDropDown("aktivitas")}
           onMouseLeave={() => this.hideDropDown("aktivitas")}
-          className={this.state.aktivitasActive}
+          // className={this.state.aktivitasActive}
+          className={this.props.menu.aktivitasActive}
         >
-          <a href="/#">
+          <a href="/aktivitasProgram">
             <NavDropdown
               title="Aktivitas"
               id="collasible-nav-dropdown"
@@ -587,4 +594,10 @@ class Headers extends Component {
     );
   }
 }
-export default Headers;
+
+const mapStateToProps = (state) => {
+  const { menu } = state.menu;
+  return { menu };
+};
+
+export default connect(mapStateToProps, { setMenuActive })(Headers);

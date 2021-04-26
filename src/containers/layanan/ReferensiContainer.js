@@ -1,21 +1,20 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import RouteHome from "../../components/headers/RouteHome/RouteHome";
+import ImageFadeIn from "../../components/ui/ImageFadeIn";
+import Auxiliary from "../../hoc/Auxiliary";
+import { setMenuActive } from "../../store/actions";
+
 class ReferensiContainer extends Component {
+  componentDidMount() {
+    this.props.setMenuActive("layananActive");
+  }
+
   render() {
     return (
-      <div>
-        <section className="post-wrapper-top">
-          <div className="container">
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <ul className="breadcrumb">
-                <li>
-                  <a href="home.html">Home</a>
-                </li>
-                <li>Layanan Referensi</li>
-              </ul>
-              <h2>LAYANAN REFERENSI</h2>
-            </div>
-          </div>
-        </section>
+      <Auxiliary>
+        <RouteHome title="Layanan Referensi" goToHome={this.props.history} />
+
         <section className="section1">
           <div className="container ">
             <div className="col-lg-12 col-md-12 col-sm-12 clearfix">
@@ -88,19 +87,27 @@ class ReferensiContainer extends Component {
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12">
                   <p>
-                    <img
-                      src={require("../../img/img-referensi.jpg")}
-                      className="img-responsive img-shadow"
-                      alt="Referensi"
-                    />
+                    <ImageFadeIn>
+                      <img
+                        src={require("../../img/img-referensi.jpg")}
+                        className="img-responsive img-shadow"
+                        alt="Referensi"
+                      />
+                    </ImageFadeIn>
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-      </div>
+      </Auxiliary>
     );
   }
 }
-export default ReferensiContainer;
+
+const mapStateToProps = (state) => {
+  const { menu } = state.menu;
+  return { menu };
+};
+
+export default connect(mapStateToProps, { setMenuActive })(ReferensiContainer);

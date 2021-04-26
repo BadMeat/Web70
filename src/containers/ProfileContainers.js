@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import RouteHome from "../components/headers/RouteHome/RouteHome";
+import ImageFadeIn from "../components/ui/ImageFadeIn";
 import MapLocation from "../components/ui/MapLocation";
+import { setMenuActive } from "../store/actions";
 
 class ProfileContainers extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.props.setMenuActive("profilActive");
   }
 
   componentDidUpdate() {
@@ -12,24 +17,7 @@ class ProfileContainers extends Component {
   render() {
     return (
       <div>
-        <section className="post-wrapper-top">
-          <div className="container">
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <ul className="breadcrumb">
-                <li>
-                  <a
-                    href="\#"
-                    onClick={() => this.props.history.push("/")}
-                  >
-                    Home
-                  </a>
-                </li>
-                <li>Profil</li>
-              </ul>
-              <h2>PROFIL</h2>
-            </div>
-          </div>
-        </section>
+        <RouteHome title="Profil" goToHome={this.props.history} />
         <div id="visimisi"></div>
         <section className="section1">
           <div className="container clearfix">
@@ -41,11 +29,13 @@ class ProfileContainers extends Component {
               <div className="divider"></div>
               <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div className="he-wrap tpl2">
-                  <img
-                    src={require("../img/intro-bg2.jpg")}
-                    alt=""
-                    className="img-responsive"
-                  />
+                  <ImageFadeIn>
+                    <img
+                      src={require("../img/intro-bg2.jpg")}
+                      alt=""
+                      className="img-responsive"
+                    />
+                  </ImageFadeIn>
                   <div className="he-view">
                     <div className="bg a0" data-animate="fadeIn">
                       <div className="center-bar">
@@ -144,7 +134,12 @@ class ProfileContainers extends Component {
           <div className="stat f-container">
             <div className="f-element col-lg-12 col-md-12 col-sm-12 col-xs-12">
               <p>
-                <img src={require("../img/organisasi.png")} alt="organisasi" />
+                <ImageFadeIn>
+                  <img
+                    src={require("../img/organisasi.png")}
+                    alt="organisasi"
+                  />
+                </ImageFadeIn>
               </p>
             </div>
           </div>
@@ -200,4 +195,10 @@ class ProfileContainers extends Component {
     );
   }
 }
-export default ProfileContainers;
+
+const mapStateToProps = (state) => {
+  const { menu } = state.menu;
+  return { menu };
+};
+
+export default connect(mapStateToProps, { setMenuActive })(ProfileContainers);

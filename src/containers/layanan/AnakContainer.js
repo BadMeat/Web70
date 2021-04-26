@@ -1,21 +1,18 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import RouteHome from "../../components/headers/RouteHome/RouteHome";
+import ImageFadeIn from "../../components/ui/ImageFadeIn";
+import { setMenuActive } from "../../store/actions";
+
 class AnakContainer extends Component {
+  componentDidMount() {
+    this.props.setMenuActive("layananActive");
+  }
+
   render() {
     return (
       <div>
-        <section className="post-wrapper-top">
-          <div className="container">
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <ul className="breadcrumb">
-                <li>
-                  <a href="index.html">Home</a>
-                </li>
-                <li>Layanan Anak</li>
-              </ul>
-              <h2>LAYANAN ANAK</h2>
-            </div>
-          </div>
-        </section>
+        <RouteHome title="Layanan Anak" goToHome={this.props.history} />
 
         <section className="section1">
           <div className="container ">
@@ -64,11 +61,13 @@ class AnakContainer extends Component {
                   </p>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12">
-                  <img
-                    className="img-responsive"
-                    src={require("../../img/img-layananak.png")}
-                    alt=""
-                  />
+                  <ImageFadeIn>
+                    <img
+                      className="img-responsive"
+                      src={require("../../img/img-layananak.png")}
+                      alt=""
+                    />
+                  </ImageFadeIn>
                 </div>
               </div>
 
@@ -81,4 +80,10 @@ class AnakContainer extends Component {
     );
   }
 }
-export default AnakContainer;
+
+const mapStateToProps = (state) => {
+  const { menu } = state.menu;
+  return { menu };
+};
+
+export default connect(mapStateToProps, { setMenuActive })(AnakContainer);

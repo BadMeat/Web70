@@ -14,10 +14,15 @@ import bulanSeptember from "../data/Bulanan/BulanSeptember";
 import bulanNovember from "../data/Bulanan/BulanNovember";
 import bulanDesember from "../data/Bulanan/BulanDesember";
 import bulanKosong from "../data/Bulanan/BulanKosong";
+import RouteHome from "../components/headers/RouteHome/RouteHome";
+import { setMenuActive } from "../store/actions";
+import { connect } from "react-redux";
+import ImageFadeIn from "../components/ui/ImageFadeIn";
 
 class LaporanBulananContainers extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
+    this.props.setMenuActive("laporanActive");
   }
 
   componentDidUpdate() {
@@ -250,186 +255,183 @@ class LaporanBulananContainers extends Component {
   render() {
     return (
       <div>
-        <section className="post-wrapper-top">
-          <div className="container">
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <ul className="breadcrumb">
-                <li>
-                  <a href="home.html">Home</a>
-                </li>
-                <li>Laporan Bulanan</li>
-              </ul>
-              <h2>LAPORAN BULANAN</h2>
-            </div>
-          </div>
-        </section>
-
-        <section className="section1">
-          <div className="container clearfix">
-            <div
-              style={{
-                display: "flex",
-                width: "100%",
-              }}
-            >
-              <DropdownButton
-                id="dropdown-item-button"
-                title="Bulan"
-                onSelect={this.onSemesterSelected}
-              >
-                <Dropdown.Item eventKey="1" as="button">
-                  Januari
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="2" as="button">
-                  Februari
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="3" as="button">
-                  Maret
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="4" as="button">
-                  April
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="5" as="button">
-                  Mei
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="6" as="button">
-                  Juni
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="7" as="button">
-                  Juli
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="8" as="button">
-                  Agustus
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="9" as="button">
-                  September
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="10" as="button">
-                  Oktober
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="11" as="button">
-                  November
-                </Dropdown.Item>
-                <Dropdown.Item eventKey="12" as="button">
-                  Desember
-                </Dropdown.Item>
-              </DropdownButton>
-              <div style={{ marginLeft: 10 }}>
-                <DropdownButton
-                  id="dropdown-item-button"
-                  title="Tahun"
-                  onSelect={this.onTahunSelected}
-                >
-                  <Dropdown.Item eventKey="2021" as="button">
-                    2021
-                  </Dropdown.Item>
-                  <Dropdown.Item eventKey="2020" as="button">
-                    2020
-                  </Dropdown.Item>
-                  <Dropdown.Item eventKey="2019" as="button">
-                    2019
-                  </Dropdown.Item>
-                </DropdownButton>
-              </div>
+        <RouteHome title="Laporan Bulanan" goToHome={this.props.history} />
+        <ImageFadeIn>
+          <section className="section1">
+            <div className="container clearfix">
               <div
                 style={{
-                  alignItems: "center",
                   display: "flex",
-                  marginLeft: "20px",
-                  fontSize: "20px",
+                  width: "100%",
                 }}
               >
-                {this.state.selectedTitle} {this.state.selectedTahun}
+                <DropdownButton
+                  id="dropdown-item-button"
+                  title="Bulan"
+                  onSelect={this.onSemesterSelected}
+                >
+                  <Dropdown.Item eventKey="1" as="button">
+                    Januari
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="2" as="button">
+                    Februari
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="3" as="button">
+                    Maret
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="4" as="button">
+                    April
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="5" as="button">
+                    Mei
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="6" as="button">
+                    Juni
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="7" as="button">
+                    Juli
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="8" as="button">
+                    Agustus
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="9" as="button">
+                    September
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="10" as="button">
+                    Oktober
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="11" as="button">
+                    November
+                  </Dropdown.Item>
+                  <Dropdown.Item eventKey="12" as="button">
+                    Desember
+                  </Dropdown.Item>
+                </DropdownButton>
+                <div style={{ marginLeft: 10 }}>
+                  <DropdownButton
+                    id="dropdown-item-button"
+                    title="Tahun"
+                    onSelect={this.onTahunSelected}
+                  >
+                    <Dropdown.Item eventKey="2021" as="button">
+                      2021
+                    </Dropdown.Item>
+                    <Dropdown.Item eventKey="2020" as="button">
+                      2020
+                    </Dropdown.Item>
+                    <Dropdown.Item eventKey="2019" as="button">
+                      2019
+                    </Dropdown.Item>
+                  </DropdownButton>
+                </div>
+                <div
+                  style={{
+                    alignItems: "center",
+                    display: "flex",
+                    marginLeft: "20px",
+                    fontSize: "20px",
+                  }}
+                >
+                  {this.state.selectedTitle} {this.state.selectedTahun}
+                </div>
               </div>
-            </div>
-            <div className="row">
-              <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 clearfix">
-                <div className="clearfix">&nbsp;</div>
-                <h4>ANGGOTA</h4>
-                <table className="table table-striped" data-effect="fade">
-                  <thead>
-                    <tr>
-                      <th>Jenis Anggota</th>
-                      <th>Jumlah</th>
-                    </tr>
-                  </thead>
-                  <tbody>{this.renderAnggota()}</tbody>
-                </table>
+              <div className="row">
+                <div className="col-lg-3 col-md-3 col-sm-12 col-xs-12 clearfix">
+                  <div className="clearfix">&nbsp;</div>
+                  <h4>ANGGOTA</h4>
+                  <table className="table table-striped" data-effect="fade">
+                    <thead>
+                      <tr>
+                        <th>Jenis Anggota</th>
+                        <th>Jumlah</th>
+                      </tr>
+                    </thead>
+                    <tbody>{this.renderAnggota()}</tbody>
+                  </table>
+                </div>
               </div>
-            </div>
 
-            <div className="row">
-              <div className=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                <h4>KOLEKSI</h4>
-                <table className="table table-striped" data-effect="fade">
-                  <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Jenis Koleksi</th>
-                      <th>Jumlah Judul</th>
-                      <th>Jumlah Eksemplar</th>
-                    </tr>
-                  </thead>
-                  <tbody>{this.renderKoleksi()}</tbody>
-                </table>
+              <div className="row">
+                <div className=" col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                  <h4>KOLEKSI</h4>
+                  <table className="table table-striped" data-effect="fade">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Jenis Koleksi</th>
+                        <th>Jumlah Judul</th>
+                        <th>Jumlah Eksemplar</th>
+                      </tr>
+                    </thead>
+                    <tbody>{this.renderKoleksi()}</tbody>
+                  </table>
+                </div>
+                <div className=" col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
               </div>
-              <div className=" col-lg-6 col-md-6 col-sm-12 col-xs-12"></div>
-            </div>
 
-            <div className="row">
-              <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix">
-                <div className="clearfix">&nbsp;</div>
-                <h4>KUNJUNGAN DRIVE THRU</h4>
-                <p>Kunjungan Tanpa Rombel</p>
-                <table className="table table-striped" data-effect="fade">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Jenis Anggota</th>
-                      <th>Jumlah Pengunjung</th>
-                    </tr>
-                  </thead>
-                  <tbody>{this.renderKunjungan()}</tbody>
-                </table>
-                <p className="small">Kunjungan dengan Rombel (klasikal)</p>
-                <table className="table table-striped" data-effect="fade">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Kelas</th>
-                      <th>Mata Pelajaran</th>
-                      <th>Jumlah Siswa</th>
-                    </tr>
-                  </thead>
-                  <tbody>{this.renderKunjunganRombel()}</tbody>
-                </table>
+              <div className="row">
+                <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix">
+                  <div className="clearfix">&nbsp;</div>
+                  <h4>KUNJUNGAN DRIVE THRU</h4>
+                  <p>Kunjungan Tanpa Rombel</p>
+                  <table className="table table-striped" data-effect="fade">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Jenis Anggota</th>
+                        <th>Jumlah Pengunjung</th>
+                      </tr>
+                    </thead>
+                    <tbody>{this.renderKunjungan()}</tbody>
+                  </table>
+                  <p className="small">Kunjungan dengan Rombel (klasikal)</p>
+                  <table className="table table-striped" data-effect="fade">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Kelas</th>
+                        <th>Mata Pelajaran</th>
+                        <th>Jumlah Siswa</th>
+                      </tr>
+                    </thead>
+                    <tbody>{this.renderKunjunganRombel()}</tbody>
+                  </table>
+                </div>
+                <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix"></div>
               </div>
-              <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix"></div>
-            </div>
 
-            <div className="row">
-              <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix">
-                <div className="clearfix">&nbsp;</div>
-                <h4>SIRKULASI DRIVE THRU*</h4>
-                <table className="table table-striped" data-effect="fade">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Jenis Anggota</th>
-                      <th>Jumlah Peminjaman</th>
-                      <th>Telah Mengembalikan</th>
-                      <th>Jumlah Keterlambatan</th>
-                    </tr>
-                  </thead>
-                  <tbody>{this.renderSirkulasi()}</tbody>
-                </table>
+              <div className="row">
+                <div className="col-lg-7 col-md-7 col-sm-12 col-xs-12 clearfix">
+                  <div className="clearfix">&nbsp;</div>
+                  <h4>SIRKULASI DRIVE THRU*</h4>
+                  <table className="table table-striped" data-effect="fade">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Jenis Anggota</th>
+                        <th>Jumlah Peminjaman</th>
+                        <th>Telah Mengembalikan</th>
+                        <th>Jumlah Keterlambatan</th>
+                      </tr>
+                    </thead>
+                    <tbody>{this.renderSirkulasi()}</tbody>
+                  </table>
+                </div>
+                <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix"></div>
               </div>
-              <div className="col-lg-5 col-md-5 col-sm-12 col-xs-12 clearfix"></div>
             </div>
-          </div>
-        </section>
+          </section>
+        </ImageFadeIn>
       </div>
     );
   }
 }
-export default LaporanBulananContainers;
+
+const mapStateToProps = (state) => {
+  const { menu } = state.menu;
+  return { menu };
+};
+
+export default connect(mapStateToProps, { setMenuActive })(
+  LaporanBulananContainers
+);

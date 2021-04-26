@@ -68,7 +68,10 @@ class App extends Component {
           {/* <Route path="/laporanSaran" component={LaporanSaran} /> */}
           {/* <Route path="/opacSurvey" component={LoginContainer} /> */}
           {/* Aktivitas */}
-          <Route path="/aktivitasProgram" component={ProgramUnggulanContainer} />
+          <Route
+            path="/aktivitasProgram"
+            component={ProgramUnggulanContainer}
+          />
           <Route path="/aktivitasPrestasi" component={PrestasiContainer} />
         </Switch>
       </Layout>
