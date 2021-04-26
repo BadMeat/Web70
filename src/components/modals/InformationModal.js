@@ -24,9 +24,10 @@ const informationModal = (props) => {
       <Modal.Footer>
         <Button
           variant="primary"
-          onClick={() =>
-            window.open(`http://localhost/lib70/${props.localUrl}`, "_blank")
-          }
+          onClick={() => {
+            window.open(`http://localhost/lib70/${props.localUrl}`, "_blank");
+            props.onHide();
+          }}
         >
           Lanjut
         </Button>

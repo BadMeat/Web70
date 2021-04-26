@@ -18,6 +18,7 @@ import NotificationModal from "../modals/NotificationModal";
 const navLinkStyle = {
   color: "black",
   textDecoration: "none",
+  display: "block"
 };
 
 class Headers extends Component {
@@ -340,58 +341,46 @@ class Headers extends Component {
               id="collasible-nav-dropdown"
               show={this.state.opac}
             >
-              <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
-                <a
-                  href="/#"
-                  onClick={() => {
-                    this.setState({
-                      urlLocal: "?p=visitor",
-                    });
-                    this.modalIsClick(true);
-                  }}
-                  style={navLinkStyle}
-                >
-                  Visitor Counter
-                </a>
+              <NavDropdown.Item
+                onClick={() => {
+                  this.setHover("opacActive");
+                  this.setState({
+                    urlLocal: "?p=visitor",
+                  });
+                  this.modalIsClick(true);
+                }}
+              >
+                Visitor Counter
               </NavDropdown.Item>
               <NavDropdown.Divider style={{ margin: 0 }} />
-              <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
-                <a
-                  href="/#"
-                  onClick={() => {
-                    this.setState({
-                      urlLocal: "",
-                    });
-                    this.modalIsClick(true);
-                  }}
-                  style={navLinkStyle}
-                >
-                  Sistem PERPUSTAKAAN
-                </a>
+              <NavDropdown.Item
+                onClick={() => {
+                  this.setHover("opacActive");
+                  this.setState({
+                    urlLocal: "",
+                  });
+                  this.modalIsClick(true);
+                }}
+              >
+                Sistem PERPUSTAKAAN
               </NavDropdown.Item>
               <NavDropdown.Divider style={{ margin: 0 }} />
-              <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
-                <a
-                  href="/#"
-                  onClick={() => {
-                    this.notifIsClick(true);
-                  }}
-                  style={navLinkStyle}
-                >
-                  e-DTS
-                </a>
+              <NavDropdown.Item
+                onClick={() => {
+                  this.setHover("opacActive");
+                  this.notifIsClick(true);
+                }}
+              >
+                e-DTS
               </NavDropdown.Item>
               <NavDropdown.Divider style={{ margin: 0 }} />
-              <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
-                <a
-                  href="/#"
-                  onClick={() => {
-                    this.notifIsClick(true);
-                  }}
-                  style={navLinkStyle}
-                >
-                  e-DDC
-                </a>
+              <NavDropdown.Item
+                onClick={() => {
+                  this.setHover("opacActive");
+                  this.notifIsClick(true);
+                }}
+              >
+                e-DDC
               </NavDropdown.Item>
               <NavDropdown.Item onClick={() => this.setHover("laporanActive")}>
                 <a
