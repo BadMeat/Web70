@@ -1,12 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Collapse from "react-bootstrap/Collapse";
 import { NavLink } from "react-router-dom";
-import SubMenuMobile from "../SubMenuMobile";
+import InformationModal from "../../modals/InformationModal";
+import NotificationModal from "../../modals/NotificationModal";
 
-const menuItemOpac = (props) => {
+const MenuItemOpac = (props) => {
+  const [addIsOpen, setAddOpen] = useState(false);
+  const [url, setUrl] = useState("");
+  const [notifIsOpen, setNotifOpen] = useState(false);
+
+  const modalIsClick = (bool) => {
+    setAddOpen(bool);
+  };
+
   return (
     <div>
       {/* Menu Layanan */}
+      <InformationModal
+        show={addIsOpen}
+        onHide={() => modalIsClick(false)}
+        localUrl={url}
+      />
+      <NotificationModal
+        show={notifIsOpen}
+        onHide={() => setNotifOpen(false)}
+      />
       <div
         style={{ paddingTop: "10px", fontSize: "15px" }}
         onClick={() => props.menu()}
@@ -17,54 +35,56 @@ const menuItemOpac = (props) => {
       {/* Sub Menu Layanan */}
       <Collapse in={props.menuIsOpen}>
         <div style={{ paddingLeft: "40px" }}>
-          {/* <SubMenuMobile
-            setMenuCollapse={props.setMenuCollapse}
-            to={"/opac"}
-            title="Visitor Counter"
-          /> */}
           <NavLink style={{ color: "black" }} to={"/opac"}>
             <div style={{ height: "10px" }} />
             <a
               id="collasible-nav-dropdown"
               href="/#"
-              onClick={() =>
-                window.open("http://localhost/lib70/?p=visitor", "_blank")
-              }
+              onClick={() => {
+                modalIsClick(true);
+                setUrl("?p=visitor");
+              }}
             >
               Visitor Counter
             </a>
           </NavLink>
-          {/* <SubMenuMobile
-            setMenuCollapse={props.setMenuCollapse}
-            to={"/opac"}
-            onClick={newTab}
-            title="Sistem Perpustakaan"
-          /> */}
           <NavLink style={{ color: "black" }} to={"/opac"}>
             <div style={{ height: "10px" }} />
             <a
               id="collasible-nav-dropdown"
               href="/#"
-              onClick={() => window.open("http://localhost/lib70/", "_blank")}
+              onClick={() => {
+                modalIsClick(true);
+                setUrl("");
+              }}
             >
               Sistem PERPUSTAKAAN
             </a>
           </NavLink>
-          <SubMenuMobile
-            setMenuCollapse={props.setMenuCollapse}
-            to={"/opac"}
-            title="E-DTS"
-          />
-          <div>
-            <NavLink
-              style={{ color: "black" }}
-              to={"/opac"}
-              onClick={props.setMenuCollapse}
+          <NavLink style={{ color: "black" }} to={"/opac"}>
+            <div style={{ height: "10px" }} />
+            <a
+              id="collasible-nav-dropdown"
+              href="/#"
+              onClick={() => {
+                setNotifOpen(true);
+              }}
             >
-              <div style={{ height: "10px" }} />
+              E-DTS
+            </a>
+          </NavLink>
+          <NavLink style={{ color: "black" }} to={"/opac"}>
+            <div style={{ height: "10px" }} />
+            <a
+              id="collasible-nav-dropdown"
+              href="/#"
+              onClick={() => {
+                setNotifOpen(true);
+              }}
+            >
               E-DCC
-            </NavLink>
-          </div>
+            </a>
+          </NavLink>
           <NavLink style={{ color: "black" }} to={"/opac"}>
             <div style={{ height: "10px" }} />
             <a
@@ -87,4 +107,4 @@ const menuItemOpac = (props) => {
     </div>
   );
 };
-export default menuItemOpac;
+export default MenuItemOpac;

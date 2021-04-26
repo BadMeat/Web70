@@ -2909,3 +2909,17 @@ section {
 .div-link:hover {
   text-decoration: underline;
 }
+
+.my-modal {
+  width: 26vw;
+  max-width: 26vw;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .my-modal {
+    width: 100vw;
+    max-width: 100vw;
+  }
+}

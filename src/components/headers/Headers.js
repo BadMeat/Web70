@@ -9,9 +9,11 @@ import MenuItemProfil from "./MenuProfil/MenuItemProfil";
 import MenuItemOpac from "./MenuOpac/MenuItemOpac";
 import MenuItemLaporan from "./MenuLaporan/MenuItemLaporan";
 import MenuItemAktifitas from "./MenuAktifitas/MenuAktifitas";
-import IpAddressModal from "../modals/IpAddressModal";
+// import IpAddressModal from "../modals/IpAddressModal";
 import { connect } from "react-redux";
 import { setMenuActive } from "../../store/actions";
+import InformationModal from "../modals/InformationModal";
+import NotificationModal from "../modals/NotificationModal";
 
 const navLinkStyle = {
   color: "black",
@@ -28,21 +30,9 @@ class Headers extends Component {
     isOpen: false,
     menuOpen: false,
     ipAddressIsOpen: false,
+    urlLocal: "",
+    notifIsOpen: false,
   };
-
-  constructor(props) {
-    super(props);
-    this.handleStateChange = this.handleStateChange.bind(this);
-    this.handleLinkClick = this.handleLinkClick.bind(this);
-  }
-
-  handleStateChange(state) {
-    this.setState({ menuOpen: state.isOpen });
-  }
-
-  handleLinkClick(e) {
-    this.setState({ menuOpen: false });
-  }
 
   setHover = (property) => {
     this.props.setMenuActive(property);
@@ -68,7 +58,6 @@ class Headers extends Component {
       menuLaporanIsOpen: false,
       menuAktivitasIsOpen: false,
     });
-    this.handleLinkClick();
   };
 
   showDropDown = (property) => {
@@ -354,12 +343,12 @@ class Headers extends Component {
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
                 <a
                   href="/#"
-                  onClick={() =>
-                    window.open("http://localhost/lib70/?p=visitor", "_blank")
-                  }
-                  // onClick={() => {
-                  //   this.modalIsClick(true);
-                  // }}
+                  onClick={() => {
+                    this.setState({
+                      urlLocal: "?p=visitor",
+                    });
+                    this.modalIsClick(true);
+                  }}
                   style={navLinkStyle}
                 >
                   Visitor Counter
@@ -369,9 +358,12 @@ class Headers extends Component {
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
                 <a
                   href="/#"
-                  onClick={() =>
-                    window.open("http://localhost/lib70/", "_blank")
-                  }
+                  onClick={() => {
+                    this.setState({
+                      urlLocal: "",
+                    });
+                    this.modalIsClick(true);
+                  }}
                   style={navLinkStyle}
                 >
                   Sistem PERPUSTAKAAN
@@ -379,11 +371,27 @@ class Headers extends Component {
               </NavDropdown.Item>
               <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
-                e-DTS
+                <a
+                  href="/#"
+                  onClick={() => {
+                    this.notifIsClick(true);
+                  }}
+                  style={navLinkStyle}
+                >
+                  e-DTS
+                </a>
               </NavDropdown.Item>
               <NavDropdown.Divider style={{ margin: 0 }} />
               <NavDropdown.Item onClick={() => this.setHover("opacActive")}>
-                e-DDC
+                <a
+                  href="/#"
+                  onClick={() => {
+                    this.notifIsClick(true);
+                  }}
+                  style={navLinkStyle}
+                >
+                  e-DDC
+                </a>
               </NavDropdown.Item>
               <NavDropdown.Item onClick={() => this.setHover("laporanActive")}>
                 <a
@@ -481,13 +489,28 @@ class Headers extends Component {
     });
   };
 
+  notifIsClick = (bool) => {
+    this.setState({
+      notifIsOpen: bool,
+    });
+  };
+
   render() {
     return (
       <div>
         {/* <body> */}
-        <IpAddressModal
+        {/* <IpAddressModal
           show={this.state.ipAddressIsOpen}
           onHide={() => this.modalIsClick(false)}
+        /> */}
+        <InformationModal
+          show={this.state.ipAddressIsOpen}
+          onHide={() => this.modalIsClick(false)}
+          localUrl={this.state.urlLocal}
+        />
+        <NotificationModal
+          show={this.state.notifIsOpen}
+          onHide={() => this.notifIsClick(false)}
         />
         <div className="topbar clearfix">
           <div className="container">

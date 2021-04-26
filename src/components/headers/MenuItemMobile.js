@@ -31,28 +31,28 @@ const menuItemMobile = (props) => {
           />
           <SubMenuMobile
             setMenuCollapse={props.setMenuCollapse}
-            to={"/layanan"}
+            to={"/layananSirkulasi"}
             title="Layanan Sirkulasi"
             navToScroolBot={props.navToScroolBot}
             scrollTo="sirkulasi"
           />
           <SubMenuMobile
             setMenuCollapse={props.setMenuCollapse}
-            to={"/layanan"}
+            to={"/layananReferensi"}
             title="Layanan Referensi"
             navToScroolBot={props.navToScroolBot}
             scrollTo="referensi"
           />
           <SubMenuMobile
             setMenuCollapse={props.setMenuCollapse}
-            to={"/layanan"}
+            to={"/layananBimbingan"}
             title="Layanan Bimbingan Pemustaka"
             navToScroolBot={props.navToScroolBot}
             scrollTo="bimbingan"
           />
           <SubMenuMobile
             setMenuCollapse={props.setMenuCollapse}
-            to={"/layanan"}
+            to={"/layananKeanggotaan"}
             title="Layanan Keanggotaan"
             navToScroolBot={props.navToScroolBot}
             scrollTo="keanggotaan"
@@ -60,7 +60,7 @@ const menuItemMobile = (props) => {
           <div>
             <NavLink
               style={{ color: "black" }}
-              to={"/layanan"}
+              to={"/layananKerjasama"}
               onClick={layananKerjasamaOnClick}
             >
               <div style={{ height: "10px" }} />
